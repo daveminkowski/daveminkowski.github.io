@@ -1,0 +1,308 @@
+/* Styling semantic tags requires no prepended "." or "#"        */
+body {
+	font-family: 'Fira Sans Condensed', sans-serif;
+	font-size: 15px;
+	line-height: 1.5;
+	padding: 0;
+	margin: 0;
+	background-color: #F3F0F0;
+}
+
+html {
+	overflow-y: scroll
+}
+
+/* global container class with 80% page width, auto margins and hidden overflow   					*/
+.container {
+	width:80%;
+	margin: auto;
+	overflow: hidden;
+}
+
+.headcontainer {
+	width:80%;
+	overflow: hidden;
+	margin: auto;
+}
+
+.highlight { 			/* span class and current active link */
+	color: #2589C9;
+	font-weight: bold;
+}
+
+/* global unordered lists with NO margin or padding by default            							*/
+ul {
+	margin:0;
+	padding:0;
+}
+
+/* styling for home page button																		*/
+.button {
+	padding: 0.5rem 2rem;
+	border: 2px #000000 solid;
+	margin-top: 450px;
+	margin-left: -290px;
+	float: left;
+	border-radius: 50px;
+	text-decoration: none;
+	color: #000000;
+	transition: background 500ms ease;
+}
+
+/* button on the contact form */
+.submitbutton {
+	height: 40px;
+	width: 93%;
+	background: white;
+	border: none;
+	padding-left: 20px;
+	padding-right: 20px;
+	color: #000000;
+}
+
+/* contact form button hover */
+.button:hover {
+	background-color: #2589C9;
+	color: #ffffff;
+}
+
+/* the dark blue style for sidebars;																		*/
+.dark {
+	padding: 15px;
+	background: #2589C9;
+	color: #ffffff;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+/* Header "box" and all the elements within*/
+header {
+	color: #6C6C6C;
+	background-color: rgba(255,255,255,1);
+	padding-top: 15px;
+	border-bottom: #2589C9 4px solid;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+}
+
+header a { 									/* Links within the header */
+	color: #6C6C6C;
+	text-decoration: none;
+	text-transform: uppercase;
+	font-size: 18px;
+}
+
+header li { 								/* Each individual list item within the header (each nav link) */
+	float: left;
+	display: inline;
+	/* when formatting a padding statement, numbers correspond to top, right, bottom, left
+	... example: padding: 5px 10px 5px 10px;            								*/
+	padding: 0 6px 0 6px;
+	font-weight: bold;
+}
+
+header h1 {
+	margin: 0;
+	float: left;
+}
+
+header nav { 								/* the entire nav group within the header */
+	float: right;
+	margin-top: 10px;
+}
+
+header .highlight, header .current a{ 		/* span class and current active link */
+	color: #86C7F0;
+	font-weight: bold;
+}
+
+
+header a:hover {							/* when the nav links in the header are hovered over */
+	color: #86C7F0;
+}
+
+/*Showcase */
+#landing {									/* the main body of index.html - basically the container which holds everything but the header and footer */
+	text-align: center;
+	color: #000000;
+	background:url("../images/pierBW2.jpg");
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+}
+
+#landing h1 {
+	margin-top: 330px;
+	font-size: 60px;
+	margin-bottom: 10px;
+	float: left;
+}
+
+#landing h2 {
+	margin-top: 410px;
+	float: left;
+	margin-left: -60px;
+}
+
+#landing p {
+	font-size: 20px;
+}
+
+/* the main body of index.html after scroll-down */
+#mystuff {									
+	text-align: center;
+	color: #FFFFFF;
+	background-attachment: fixed;
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin: 0;
+	padding: 0;
+	height: 100vh;
+	background-image: url("../images/pierColor.jpg");
+}
+
+#mystuff h1 {
+	font-size: 60px;
+}
+
+#mystuff p {
+	font-size: 20px;
+}
+
+/* create a border between black and white/colorized versions of the background images */
+#mystuff {
+	border-top: orange 6px solid;
+}
+
+/* the index.html and project.html boxes */
+#myboxes .box, #bottomboxes .box, #projectboxes .box {
+	float: left;
+	width: 20%;
+	padding: 0px;
+	text-align: center;
+	margin-top: 90px;
+}
+
+#bottomboxes {
+	margin-top: -40px;
+}
+
+/* images within the boxes */
+#myboxes .box img, #bottomboxes .box img, #projectboxes .box img {
+	width: 280px;
+	border: 4px #000000 solid;
+}
+
+/* hover over an image */
+#myboxes .box img:hover, #bottomboxes .box img:hover {
+	opacity: 0.5;
+	border: 4px #ffffff solid;
+}
+
+#projectboxes .box {
+	margin-top: 100px;
+}
+/* image hover border color for projects.html*/
+#projectboxes .box img:hover {
+	border: 4px #2589C9 solid;
+}
+
+/* "This is some stuff I like" */
+#mystufftitle {
+	margin-left: 800px;
+	margin-top: 180px;
+	text-align: center;
+	text-shadow: -4px 4px 2px #000000,
+				  4px 4px 2px #000000,
+				  4px -4px 0 #000000,
+				  -4px -4px 0 #000000;
+	
+}
+
+/* main content area for all pages except index */
+#main {
+	margin-top: 80px;
+}
+/* left content column*/
+article#mainarticle {
+	float: left;
+	width: 65%;
+}
+
+/* sidebar */
+aside#sidebar {
+	float: right;
+	margin-top: 10px;
+	width: 30%;
+}
+
+/* link color in sidebar */
+aside a {
+	color: gold;
+}
+
+/* link hover action in sidebar */
+aside a:hover {
+	color: #FFFFFF;
+}
+
+/* message form in sidebar on contact page */
+aside#sidebar .messageform {
+	text-align: center;
+	height: 600px;
+}
+
+/* text field for message on contact page */
+aside#sidebar .messageform textarea {
+	height: 400px;
+}
+
+/* input fields on contact page */
+aside#sidebar .messageform input, aside#sidebar .messageform textarea {
+	width: 90%;
+	padding: 5px;
+	
+} 
+
+/*Contact Options List*/
+ul#contactme li{
+	margin-top: 15px;
+	list-style: none;
+	padding: 20px;
+	border: #cccccc solid 1 px;
+	margin-bottom: 5px;
+	background: #BCBCBC;
+}
+
+/* Footer */
+footer {
+	min-height: 50px;
+	background-color: rgba(255,255,255,0.9);
+	width: 100%;
+	position: fixed;
+	bottom: 0px;
+	text-align: center;
+}
+
+footer p {
+	margin-top: 15px;
+	color: #000000;
+	font-size: 12px;
+}
+
+footer nav { 								/* the entire nav group within the header */
+	margin-top: 10px;
+	text-decoration: none;
+}
+
+footer li {
+	display: inline;
+	padding: 0 20px 0 20px;
+}
+
