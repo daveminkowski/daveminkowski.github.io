@@ -1,4 +1,7 @@
-/* Styling semantic tags requires no prepended "." or "#"        */
+/* fix for the vertical scroll bar, appears on every page regardless of need */
+html {
+	overflow-y: scroll
+}
 body {
 	font-family: 'Fira Sans Condensed', sans-serif;
 	font-size: 15px;
@@ -7,48 +10,48 @@ body {
 	margin: 0;
 	background-color: #F3F0F0;
 }
-
-html {
-	overflow-y: scroll
+/* global removal of hyperlink underlining*/
+a {
+	text-decoration: none;
 }
-
+/* global unordered lists with NO margin or padding by default            							*/
+ul {
+	margin: 0;
+	padding: 0;
+}
 /* global container class with 80% page width, auto margins and hidden overflow   					*/
 .container {
-	width:80%;
+	width: 80%;
 	margin: auto;
 	overflow: hidden;
 }
-
-.headcontainer {
-	width:80%;
-	overflow: hidden;
+.centeredcontainer {
+	width: 80%;
 	margin: auto;
+	overflow: hidden;
+	text-align: center;
 }
-
-.highlight { 			/* span class and current active link */
+/* span class and current active link decoration*/
+.highlight {
 	color: #2589C9;
 	font-weight: bold;
 }
-
-/* global unordered lists with NO margin or padding by default            							*/
-ul {
-	margin:0;
-	padding:0;
-}
-
 /* styling for home page button																		*/
-.button {
+.blueroundedbutton {
 	padding: 0.5rem 2rem;
 	border: 2px #000000 solid;
-	margin-top: 450px;
-	margin-left: -290px;
-	float: left;
 	border-radius: 50px;
 	text-decoration: none;
 	color: #000000;
+	background-color: transparent;
 	transition: background 500ms ease;
+	display: inline-block;
 }
-
+/* main page button hover */
+.blueroundedbutton:hover {
+	background-color: #2589C9;
+	color: #ffffff;
+}
 /* button on the contact form */
 .submitbutton {
 	height: 40px;
@@ -59,13 +62,11 @@ ul {
 	padding-right: 20px;
 	color: #000000;
 }
-
 /* contact form button hover */
-.button:hover {
-	background-color: #2589C9;
+.submitbutton:hover {
+	background-color: #BCBCBC;
 	color: #ffffff;
 }
-
 /* the dark blue style for sidebars;																		*/
 .dark {
 	padding: 15px;
@@ -74,7 +75,30 @@ ul {
 	margin-top: 10px;
 	margin-bottom: 10px;
 }
-
+.responsive {
+	max-width: 100%;
+	height: auto;
+}
+/* the index.html and project.html boxes */
+.myboxes .box, .projectboxes .box {
+	max-width: 20%;
+	padding: 20px 15px 20px 15px;
+	margin-top: 90px;
+	display: inline-block;
+}
+/* images within the boxes */
+.myboxes .box img, .projectboxes .box img {
+	border: 4px #000000 solid;
+}
+/* hover over a home page image */
+.myboxes .box img:hover {
+	opacity: 0.5;
+	border-color: #ffffff;
+}
+/* image hover border color for projects.html*/
+.projectboxes .box img:hover {
+	border-color: #2589C9;
+}
 /* Header "box" and all the elements within*/
 header {
 	color: #6C6C6C;
@@ -85,14 +109,11 @@ header {
 	top: 0px;
 	width: 100%;
 }
-
 header a { 									/* Links within the header */
 	color: #6C6C6C;
-	text-decoration: none;
 	text-transform: uppercase;
 	font-size: 18px;
 }
-
 header li { 								/* Each individual list item within the header (each nav link) */
 	float: left;
 	display: inline;
@@ -101,130 +122,58 @@ header li { 								/* Each individual list item within the header (each nav lin
 	padding: 0 6px 0 6px;
 	font-weight: bold;
 }
-
 header h1 {
 	margin: 0;
 	float: left;
 }
-
 header nav { 								/* the entire nav group within the header */
 	float: right;
 	margin-top: 10px;
 }
-
-header .highlight, header .current a{ 		/* span class and current active link */
+header .highlight, header .current a { 		/* span class and current active link */
 	color: #86C7F0;
 	font-weight: bold;
 }
-
-
 header a:hover {							/* when the nav links in the header are hovered over */
 	color: #86C7F0;
 }
-
-/*Showcase */
-#landing {									/* the main body of index.html - basically the container which holds everything but the header and footer */
-	text-align: center;
-	color: #000000;
-	background:url("../images/pierBW2.jpg");
+/*top half of index.html*/
+#landing {
+	background: url("../images/pierBW2.jpg");
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin: 0;
-	padding: 0;
 	height: 100vh;
 }
-
 #landing h1 {
-	margin-top: 330px;
+	margin-top: 140px;
 	font-size: 60px;
-	margin-bottom: 10px;
-	float: left;
 }
-
 #landing h2 {
-	margin-top: 410px;
-	float: left;
-	margin-left: -60px;
+	margin-top: -45px;
+	margin-bottom: 15px;
 }
-
-#landing p {
-	font-size: 20px;
-}
-
 /* the main body of index.html after scroll-down */
-#mystuff {									
-	text-align: center;
+#mystuff {
+	background-image: url("../images/pierColor.jpg");
+	border-top: orange 6px solid;
 	color: #FFFFFF;
+	background-color: transparent;
 	background-attachment: fixed;
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
-	margin: 0;
-	padding: 0;
-	height: 100vh;
-	background-image: url("../images/pierColor.jpg");
-}
-
-#mystuff h1 {
-	font-size: 60px;
-}
-
-#mystuff p {
-	font-size: 20px;
-}
-
-/* create a border between black and white/colorized versions of the background images */
-#mystuff {
-	border-top: orange 6px solid;
-}
-
-/* the index.html and project.html boxes */
-#myboxes .box, #bottomboxes .box, #projectboxes .box {
-	float: left;
-	width: 20%;
+	margin: 0px;
 	padding: 0px;
-	text-align: center;
-	margin-top: 90px;
+	height: 100vh;
 }
-
-#bottomboxes {
-	margin-top: -40px;
-}
-
-/* images within the boxes */
-#myboxes .box img, #bottomboxes .box img, #projectboxes .box img {
-	width: 280px;
-	border: 4px #000000 solid;
-}
-
-/* hover over an image */
-#myboxes .box img:hover, #bottomboxes .box img:hover {
-	opacity: 0.5;
-	border: 4px #ffffff solid;
-}
-
-#projectboxes .box {
-	margin-top: 100px;
-}
-/* image hover border color for projects.html*/
-#projectboxes .box img:hover {
-	border: 4px #2589C9 solid;
-}
-
 /* "This is some stuff I like" */
-#mystufftitle {
-	margin-left: 800px;
-	margin-top: 180px;
-	text-align: center;
-	text-shadow: -4px 4px 2px #000000,
-				  4px 4px 2px #000000,
-				  4px -4px 0 #000000,
-				  -4px -4px 0 #000000;
-	
+#mystuff h1 {
+	float: right;
+	font-size: 60px;
+	text-shadow: -4px 4px 2px #000000,  4px 4px 2px #000000,  4px -4px 0 #000000,  -4px -4px 0 #000000;
 }
-
 /* main content area for all pages except index */
 #main {
 	margin-top: 80px;
@@ -234,44 +183,36 @@ article#mainarticle {
 	float: left;
 	width: 65%;
 }
-
 /* sidebar */
 aside#sidebar {
 	float: right;
 	margin-top: 10px;
 	width: 30%;
 }
-
 /* link color in sidebar */
 aside a {
 	color: gold;
 }
-
 /* link hover action in sidebar */
 aside a:hover {
 	color: #FFFFFF;
 }
-
 /* message form in sidebar on contact page */
 aside#sidebar .messageform {
 	text-align: center;
 	height: 600px;
 }
-
 /* text field for message on contact page */
 aside#sidebar .messageform textarea {
 	height: 400px;
 }
-
 /* input fields on contact page */
 aside#sidebar .messageform input, aside#sidebar .messageform textarea {
 	width: 90%;
 	padding: 5px;
-	
-} 
-
+}
 /*Contact Options List*/
-ul#contactme li{
+ul#contactme li {
 	margin-top: 15px;
 	list-style: none;
 	padding: 20px;
@@ -279,30 +220,24 @@ ul#contactme li{
 	margin-bottom: 5px;
 	background: #BCBCBC;
 }
-
 /* Footer */
 footer {
-	min-height: 50px;
-	background-color: rgba(255,255,255,0.9);
+	background-color: rgba(255,255,255,1);
 	width: 100%;
+	text-align: center;
 	position: fixed;
 	bottom: 0px;
-	text-align: center;
 }
-
 footer p {
-	margin-top: 15px;
 	color: #000000;
 	font-size: 12px;
 }
-
-footer nav { 								/* the entire nav group within the header */
-	margin-top: 10px;
-	text-decoration: none;
+/* the entire nav group within the footer */
+footer nav {
+	padding-top: 10px;
 }
-
+/* each list item in the footer */
 footer li {
 	display: inline;
 	padding: 0 20px 0 20px;
 }
-
