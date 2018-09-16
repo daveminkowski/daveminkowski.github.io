@@ -1,0 +1,202 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 2</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 2 - Performing a calculation with user input:</h2>
+      <p><em>Plan and add a feature to one of the web pages in your personal site that uses at least one function to perform a mathematical calculation based on user input. Test the page to ensure it works as planned.</em></p>
+      <h3 class="page-title">Simple Calculator:</h3>
+		<p>Enter an a number in each text field, then choose an operator. The operation will be carried out from left to right. <br><em>(For example, Number 2 would be subtracted from Number 1... but Number 1 would be divided by Number 2. )</em></p>
+		 <form>
+          <fieldset>
+			  
+            <label for="num1">
+            Number 1:
+            </label>
+            <input type="number" id="num1" />
+			  
+			<label for="num2">
+            &emsp;Number 2:
+            </label>
+            <input type="number" id="num2" />
+			  
+          </fieldset>
+          <fieldset>
+            <button type="button" id="btnAdd">Add</button>&emsp;
+			<button type="button" id="btnSubtract">Subtract</button>&emsp;
+			<button type="button" id="btnMultiply">Multiply</button>&emsp;
+			<button type="button" id="btnDivide">Divide</button>
+          </fieldset>
+          <fieldset>
+             <p>Result:</p>
+             <h2 id="result">&nbsp;</h2>
+          </fieldset>
+     </form>
+		
+		<p>Same calculator, but I wanted to condense the code while trying a selector element for the operation to be performed:</p>
+		 <form>
+          <fieldset>
+			  
+            <label for="number1">
+            Number 1:
+            </label>
+            <input type="number" id="number1" />&emsp;
+			 <select id="operators">
+			  <option value="+">+&emsp;</option>
+			  <option value="-">-&emsp;</option>
+			  <option value="*">x&emsp;</option>
+			  <option value="/">÷&emsp;</option>
+			  </select> 
+			<label for="number2">
+            &emsp;Number 2:
+            </label>
+            <input type="number" id="number2" />&emsp;
+			<button type="button" id="btnCalc">Calculate</button>
+          </fieldset>
+
+          <fieldset>
+             <p>Result:</p>
+             <h2 id="result2">&nbsp;</h2>
+          </fieldset>
+     </form>
+		
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 2 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson21/index.htm" target="_blank">Hands-On 2.1</a> - Celsius to Fahrenheit calculator</p>
+        <p><a href="chapterprojects/handson22/index.htm" target="_blank">Hands-On 2.2</a> - User feedback with conditional operators</p>
+        <p><a href="chapterprojects/handson23/index.htm" target="_blank">Hands-On 2.3</a> - Custom alerts based on specific element interaction</p>
+        <p><a href="chapterprojects/handson24/index.htm" target="_blank">Hands-On 2.4</a> - Calculating totals and taxes</p>
+        <p><a href="chapterprojects/handson25/index.htm" target="_blank">Hands-On 2.5</a> - Adjusting for floating point calculations</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+	
+<script>
+	/*error message to display when a number field is empty */
+	var errMsg = "Please enter a value for both fields"
+	
+	/*addition function*/
+	function add() {
+	var num1 = parseInt(document.getElementById("num1").value);
+	var num2 = parseInt(document.getElementById("num2").value);
+	var result = (num1+num2);
+		if (num1 && num2) {
+			document.getElementById("result").innerHTML = result;
+		} else {
+			document.getElementById("result").innerHTML = errMsg;
+		}
+	}				
+	document.getElementById("btnAdd").addEventListener("click", add, false);
+	
+	/*subtraction function*/
+	function subtract() {
+	var num1 = parseInt(document.getElementById("num1").value);
+	var num2 = parseInt(document.getElementById("num2").value);
+	var result = (num1-num2);
+		if (num1 && num2) {
+			document.getElementById("result").innerHTML = result;
+		} else {
+			document.getElementById("result").innerHTML = errMsg;
+		}
+	}							
+	document.getElementById("btnSubtract").addEventListener("click", subtract, false);
+	
+	/*multiplication function*/
+	function multiply() {
+	var num1 = parseInt(document.getElementById("num1").value);
+	var num2 = parseInt(document.getElementById("num2").value);
+	var result = (num1*num2);
+		if (num1 && num2) {
+			document.getElementById("result").innerHTML = result;
+		} else {
+			document.getElementById("result").innerHTML = errMsg;
+		}
+	}							
+	document.getElementById("btnMultiply").addEventListener("click", multiply, false);
+	
+	/*division function*/
+	function divide() {
+	var num1 = parseInt(document.getElementById("num1").value);
+	var num2 = parseInt(document.getElementById("num2").value);
+	var result = (num1/num2);
+		if (num1 && num2) {
+			document.getElementById("result").innerHTML = result;
+		} else {
+			document.getElementById("result").innerHTML = errMsg;
+		}
+	}							
+	document.getElementById("btnDivide").addEventListener("click", divide, false);
+	
+	/*single calculator function using selector for operation */
+	function calc() {
+	var number1 = parseInt(document.getElementById("number1").value);
+	var number2 = parseInt(document.getElementById("number2").value);
+	var operator = document.getElementById("operators").value;
+	var calcResult = 0;
+		
+		if (number1 && number2) {
+			if (operator == "+") {
+				calcResult = (number1+number2);
+				document.getElementById("result2").innerHTML = calcResult;
+			}
+			else if (operator == "-") {
+				calcResult = (number1-number2);
+				document.getElementById("result2").innerHTML = calcResult;
+			}
+			else if (operator == "*") {
+				calcResult = (number1*number2);
+				document.getElementById("result2").innerHTML = calcResult;
+			}
+			else if (operator == "/") {
+				calcResult = (number1/number2);
+				document.getElementById("result2").innerHTML = calcResult;
+			}
+		} else {
+			document.getElementById("result2").innerHTML = errMsg;
+		}
+	}							
+	document.getElementById("btnCalc").addEventListener("click", calc, false);
+	
+	</script>
+</body>
+</html>

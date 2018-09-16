@@ -80,12 +80,17 @@ ul {
 	height: auto;
 }
 /* the index.html and project.html boxes */
-.myboxes .box, .projectboxes .box {
+.myboxes .box, .projectboxes .box, .bottomboxes .box {
 	max-width: 20%;
 	padding: 20px 15px 20px 15px;
 	margin-top: 90px;
 	display: inline-block;
 }
+
+.notopmarginboxes .box {
+	margin-top: 0px;
+}
+
 /* images within the boxes */
 .myboxes .box img, .projectboxes .box img {
 	border: 4px #000000 solid;
