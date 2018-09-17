@@ -65,24 +65,19 @@ function calc() {
 var number1 = parseInt(document.getElementById("number1").value);
 var number2 = parseInt(document.getElementById("number2").value);
 var operator = document.getElementById("operators").value;
-var calcResult = 0;
     
     if (number1 && number2) {
         if (operator == "+") {
-            calcResult = (number1+number2);
-            document.getElementById("result2").innerHTML = calcResult;
+            document.getElementById("result2").innerHTML = (number1+number2);
         }
         else if (operator == "-") {
-            calcResult = (number1-number2);
-            document.getElementById("result2").innerHTML = calcResult;
+            document.getElementById("result2").innerHTML = (number1-number2);
         }
         else if (operator == "*") {
-            calcResult = (number1*number2);
-            document.getElementById("result2").innerHTML = calcResult;
+            document.getElementById("result2").innerHTML = (number1*number2);
         }
         else if (operator == "/") {
-            calcResult = (number1/number2);
-            document.getElementById("result2").innerHTML = calcResult;
+            document.getElementById("result2").innerHTML = (number1/number2);
         }
     } else {
         document.getElementById("result2").innerHTML = errMsg;
