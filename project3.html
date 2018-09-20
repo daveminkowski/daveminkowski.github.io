@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 3</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 3 - Functionality with simple flow control:</h2>
+      <p><em>Plan and add a feature to one of the web pages in your personal site that incorporates content or functionality created by a series of if, if/else, and/or else if statements, or by a switch statement. If your page requires an event listener, create one that's backward compatible with older versions of Internet Explorer. View and test your page in one or more browsers as appropriate to ensure it works as you expect.</em></p>
+      <h3 class="page-title">Simple switch selector:</h3>
+      <p>Click one of these football team buttons. A link to the team's official homepage will appear just above an image of their logo.</p>
+      <p>There's a single placeholder image element below, hidden until you click a button. Basically, the switch statement uses the ID of the last-clicked button to determine which image should be used as the <code>&lt;img src&gt;</code> for the invisible placeholder image, then displays the appropriate image.</p>
+      <div class="centeredcontainer"><br>
+        <button class="project3button" id="packers">Packers</button>
+        <button class="project3button" id="bears">Bears</button>
+        <button class="project3button" id="vikings">Vikings</button>
+        <button class="project3button" id="lions">Lions</button>
+        <br>
+        <br>
+        <h3 id="teamurldisplay">&emsp;</h3>
+        <img id="logodisplay" src="images/project3images/packers.png" style="display:none" alt="teamlogo">
+        <p>&emsp;</p>
+        <p>&emsp;</p>
+      </div>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 3 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson31/index.htm" target="_blank">Hands-On 3.1</a> - Using a for-loop to add the value of selected items</p>
+        <p><a href="chapterprojects/handson32/index.htm" target="_blank">Hands-On 3.2</a> - Backward-compatible text field placeholders</p>
+        <p><a href="chapterprojects/handson33/index.htm" target="_blank">Hands-On 3.3</a> - Using a for-loop to populate list items with array elements</p>
+        <p><a href="chapterprojects/handson34/index.htm" target="_blank">Hands-On 3.4</a> - Using a for-loop to populate list items the value of a text field</p>
+        <p><a href="chapterprojects/handson35/index.htm" target="_blank">Hands-On 3.5</a> - Using a switch statement to populate list items with the value of a text field</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="scripts/website.nflteamselector.js"></script>
+</body>
+</html>

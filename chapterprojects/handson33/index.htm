@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <!--
+      JavaScript 6th Edition
+      Chapter 3
+      Hands-on Project 3-3
+
+      Author: Dave Minkowski
+      Date:   9/17/2018
+
+      Filename: index.htm
+   -->
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width,initial-scale=1.0">
+   <title>Hands-on Project 3-3</title>
+   <link rel="stylesheet" href="styles.css" />
+   <script src="modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+   <header>
+      <h1>
+         Hands-on Project 3-3
+      </h1>
+   </header>
+
+   <article>
+      <h2>Scouting Locations</h2>
+      <div id="results">
+          <ul>
+             <li id="item1"></li>
+             <li id="item2"></li>
+             <li id="item3"></li>
+             <li id="item4"></li>
+             <li id="item5"></li>
+          </ul>
+      </div>
+   </article>
+	<script>
+	
+		var places = ["Green Bay", "Chicago", "Minnesota", "Detroit", "Arizona"];
+		var arrayLength = places.length;
+		
+		function processPlaces() {
+			for (i = 0; i < arrayLength; i++) {
+				var listItem = document.getElementById("item"+(i+1));
+				listItem.innerHTML = places[i];
+			}
+		}
+		
+//		The following code performs the same task as the above funtion but instead uses the getElementsByTagName function to find all "li" tags as
+//		they appear in the html (there are only 5 in this document). Using this method we can assign each li item to each corresponding
+//		element in the places[] array.
+		
+		
+//		function processPlaces() {
+//			for (i = 0; i < arrayLength; i++) {
+//				document.getElementsByTagName("li")[i].innerHTML = places[i];
+//			}
+//		}
+
+		
+		if (window.addEventListener) {
+			window.addEventListener("load", processPlaces, false);
+		} else if (window.attachEvent) {
+			window.attachEvent("onload", processPlaces);
+		}
+		
+	</script>
+</body>
+</html>

@@ -104,6 +104,76 @@ ul {
 .projectboxes .box img:hover {
 	border-color: #2589C9;
 }
+/* styling for project 3 buttons																		*/
+.project3button {
+	border: 2px #000000 solid;
+	border-radius: 50px;
+	background-color: #ddd;
+  	color: black;
+  	padding: 16px 32px;
+  	text-align: center;
+  	font-size: 16px;
+	font-weight: bold;
+  	margin: 5px;
+	transition: background 300ms ease;
+	display: inline-block;
+	text-decoration: none;
+	box-shadow: 0 8px #999;
+}
+/* no focus outline for the rounded buttons when clickec cuz... it looks dumb */
+.project3button:focus {
+    outline: none;
+}
+/* ID's for project 3 buttons */
+
+#packers:hover {
+	background-color: #203731;
+	color: #FFB612;
+}
+#packers:active {
+  background-color: #48635B;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#bears:hover {
+	background-color: #0E234A;
+	color: #C83803;
+}
+#bears:active {
+  background-color: #2F436A;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#vikings:hover {
+	background-color: #4F2683;
+	color: #FFC62F;
+}
+#vikings:active {
+  background-color: #73509F;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+#lions:hover {
+	background-color: #0076B6;
+	color: #B0B7BC;
+}
+#lions:active {
+  background-color: #429FD1;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+/* Team links on the project 3 page */
+#teamurldisplay a{
+	color: #0076b6;
+}
+/* Team link hover on the project 3 page */
+#teamurldisplay a:hover{
+	color: #E32225;
+}
+#logodisplay {
+	margin:auto;
+}
+
 /* Header "box" and all the elements within*/
 header {
 	color: #6C6C6C;
