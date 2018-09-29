@@ -27,12 +27,9 @@
 		validateMessage();
 		if (nameBox.value && emailBox.value && messageBox.value) {
 			console.log("All three fields have a value. If page is not redirected, email is formatted incorrectly (handled by browser)."); 
-			return true;
 		} else {
 			console.log("One or more fields is empty - show alert dialog here");
 			alert(errMsg);
-			return false;
-			//alert("Ensure all fields are completed and email is in proper you@yoursite.com format.");
 		}
 	}
 	
