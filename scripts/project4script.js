@@ -14,8 +14,8 @@
 	// would always come back as "page not found". I think the form is trying to post its data and cant (since I have no way to handle it) and
 	// the form action has to be stopped to avoid that outcome?
 	function redirect() {
-		window.open("msgconfirm.html", "_self");
 		console.log("Success - All three fields filled, email in correct format."); 
+		window.open("msgconfirm.html", "_self");
 		return false;
 	}
 	
