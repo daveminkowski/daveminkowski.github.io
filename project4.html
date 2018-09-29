@@ -1,0 +1,115 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 4</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 4 - Exception Handling with a Form:</h2>
+      <p><em>Add exception handling to the code for one of the forms on your personal web site. If your site does not include a form, add one first. Your code should display one or more relevant error messages in an appropriate location. After you finalize your code, write a summary of the debugging methods from this chapter that you used in this project, describing how you used each one in your code. Include your written summary in a block comment code structure on the page of your site containing the form.</em></p>
+	  <!-- Summary of my debugging method:
+
+	 		My debugging approach was pretty simple. I use chrome pretty much exclusively, so I've become semi-familiar with the function of some of chrome's
+		debugging console tools. Of the methods we learned in this last chapter, I really like the console.log function. First, it doesn't pester me with alert
+		dialog windows whenever something bad happens. Secondly, I'm able to write the log messages in a way that helps me understand exactly where the error
+		occurred and what I may need to do to fix it. I guess I just mean that if i needed to, I could write a very "layman's terms" explanation of what's going on.
+		Even if I didn't understand what happened, at least I know where the error was triggered within the logic. So - that's what I did. I wrote logs everywhere I expected (or wasn't sure if) a change in the control flow would happen. I opened the page, opened the console in chrome, and the console logs told me most
+		of what I thought I'd need to know.
+			As I'm writing this I'm working on a try/catch for the email validation in the form, which would be the only validation I'd want other than making sure 
+		there was an entry in every form field. In truth, if this was a functioning form on a website where I'd want to receive messages from visitors to my website, my form probably wouldn't care what was in the message or name fields but it would definitely want to ensure that whoever sent the message was entering a properly formatted email address so I could respond to them. I've tried some basic handling involving the @ symbol and the dot in the domain for the address, but the best I could get to this point was ensuring that there was an @ symbol present. So... right now, I guess I don't have any handling for the email other than what the browser can provide with the 'required' tag addded to the element on the form.
+			One thing that appealed to me was custom error handling with an "onerror" trigger as described in the chapter, but it seemed to me that it might have
+		been overdoing it for the purposes of this project. I think once I become more comfortable with js and automatically integrating error handling with the code I'm writing, then I'll delve into that. For now, I felt that writing console.log into all the areas where a change was occuring was a good start. It
+		definitely helped me identify logic errors.
+
+      -->
+      <h3 class="page-title">Email Contact Form:</h3>
+      <p>This is just a visually modified version of the form on my contact page. This form does not interact with any server-side handling (it's hosted on github) and is set to execute a redirect method which tries to simulate a confirmation of receipt.</p>
+      <p>I've left the console logs intact to show how each element is reacting to input. I had limited homework time this week and I couldn't figure out email formatting validation without letting the browser handle it. Any help with that would be appreciated. </p>
+      <div class="container">
+        <form onsubmit="return redirect();">
+          <div class="row">
+            <div class="column25"></div>
+            <div class="column75">
+              <p id="notification" style="text-align: center">Fields marked with <span class="warn">*</span> are required.</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column25">
+              <label for="name">Your Name: <span class="warn">*</span></label>
+            </div>
+            <div class="column75">
+              <input type="text" id="name" placeholder="Your Name" style="border: 3px solid black" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column25">
+              <label for="email">Email Address: <span class="warn">*</span></label>
+            </div>
+            <div class="column75">
+              <input type="email" id="email" placeholder="Your_Email@somesite.com" style="border: 3px solid black" required>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column25">
+              <label for="message">Message: <span class="warn">*</span></label>
+            </div>
+            <div class="column75">
+              <textarea id="message" placeholder="Leave A Message..." style="height:200px; border: 3px solid black"></textarea>
+            </div>
+          </div>
+          <div class="row">
+            <input type="submit" value="Submit" id="contactbutton">
+          </div>
+        </form>
+      </div>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 4 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson41/tractor.htm" target="_blank">Hands-On 4.1</a> - Error Handling with a function</p>
+        <p><a href="chapterprojects/handson42/tractor.htm" target="_blank">Hands-On 4.2</a> - Debugging an exception handler</p>
+        <p><a href="chapterprojects/handson43/index.htm" target="_blank">Hands-On 4.3</a> - Debugging a list-populating program</p>
+        <p><a href="chapterprojects/handson44/index.htm" target="_blank">Hands-On 4.4</a> - Using strict mode in a function</p>
+        <p><a href="chapterprojects/handson45/index.htm" target="_blank">Hands-On 4.5</a> - Debugging a distance conversion program</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="scripts/project4script.js"></script>
+</body>
+</html>

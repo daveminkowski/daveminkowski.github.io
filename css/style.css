@@ -1,3 +1,6 @@
+* {
+	box-sizing: border-box;
+}
 /* fix for the vertical scroll bar, appears on every page regardless of need */
 html {
 	overflow-y: scroll
@@ -13,6 +16,14 @@ body {
 /* global removal of hyperlink underlining*/
 a {
 	text-decoration: none;
+}
+/* bare naked floating hyperlinks (project 4 form confirmation page)*/
+a {
+	color: #2589C9;
+}
+/* bare naked floating hyperlink hover (project 4 form confirmation page)*/
+a:hover {
+	color: red;
 }
 /* global unordered lists with NO margin or padding by default            							*/
 ul {
@@ -36,6 +47,11 @@ ul {
 	color: #2589C9;
 	font-weight: bold;
 }
+/* span class for warning highlight color */
+.warn {
+	color: #DB1345;
+	font-weight: bold;
+}
 /* styling for home page button																		*/
 .blueroundedbutton {
 	padding: 0.5rem 2rem;
@@ -52,28 +68,56 @@ ul {
 	background-color: #2589C9;
 	color: #ffffff;
 }
-/* button on the contact form */
-.submitbutton {
-	height: 40px;
-	width: 93%;
-	background: white;
-	border: none;
-	padding-left: 20px;
-	padding-right: 20px;
-	color: #000000;
-}
-/* contact form button hover */
-.submitbutton:hover {
-	background-color: #BCBCBC;
-	color: #ffffff;
-}
 /* the dark blue style for sidebars;																		*/
 .dark {
 	padding: 15px;
 	background: #2589C9;
 	color: #ffffff;
+}
+
+/*contact form button */
+.msgbutton {
+	border-radius: 4px;
+	background-color: #ffffff;
+	color: #000000;
+	padding: 12px 20px;
+	border: #000000 3px solid;
 	margin-top: 10px;
-	margin-bottom: 10px;
+	float: right;
+	width: 100%;
+	transition: all 0.5s;
+	cursor: pointer;
+	font-size: 18px;
+	font-weight: bold;
+}
+/*contact form button span */
+.msgbutton span {
+	cursor: pointer;
+	display: inline-block;
+	position: relative;
+	transition: 0.5s;
+}
+/*contact form button hover span  */
+.msgbutton span:after {
+	content: '\00bb';
+	font-size: 30px;
+	margin: auto;
+	color: #2589C9;
+	position: absolute;
+	opacity: 0;
+	top: -9px;
+	right: -20px;
+	transition: 0.5s;
+}
+/*contact form button hover span  */
+.msgbutton:hover span {
+	color: #000000;
+	padding-right: 25px;
+}
+/*contact form button hover span */
+.msgbutton:hover span:after {
+	opacity: 1;
+	right: 0;
 }
 .responsive {
 	max-width: 100%;
@@ -86,11 +130,9 @@ ul {
 	margin-top: 90px;
 	display: inline-block;
 }
-
 .notopmarginboxes .box {
 	margin-top: 0px;
 }
-
 /* images within the boxes */
 .myboxes .box img, .projectboxes .box img {
 	border: 4px #000000 solid;
@@ -104,76 +146,24 @@ ul {
 .projectboxes .box img:hover {
 	border-color: #2589C9;
 }
-/* styling for project 3 buttons																		*/
-.project3button {
-	border: 2px #000000 solid;
-	border-radius: 50px;
-	background-color: #ddd;
-  	color: black;
-  	padding: 16px 32px;
-  	text-align: center;
-  	font-size: 16px;
-	font-weight: bold;
-  	margin: 5px;
-	transition: background 300ms ease;
-	display: inline-block;
-	text-decoration: none;
-	box-shadow: 0 8px #999;
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
 }
-/* no focus outline for the rounded buttons when clickec cuz... it looks dumb */
-.project3button:focus {
-    outline: none;
+/* 25% width of main article div */
+.column25 {
+	float: left;
+	width: 25%;
+	margin-top: 6px;
 }
-/* ID's for project 3 buttons */
-
-#packers:hover {
-	background-color: #203731;
-	color: #FFB612;
+/* 75% width of main article div */
+.column75 {
+	float: left;
+	width: 75%;
+	margin-top: 6px;
 }
-#packers:active {
-  background-color: #48635B;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-#bears:hover {
-	background-color: #0E234A;
-	color: #C83803;
-}
-#bears:active {
-  background-color: #2F436A;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-#vikings:hover {
-	background-color: #4F2683;
-	color: #FFC62F;
-}
-#vikings:active {
-  background-color: #73509F;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-#lions:hover {
-	background-color: #0076B6;
-	color: #B0B7BC;
-}
-#lions:active {
-  background-color: #429FD1;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-/* Team links on the project 3 page */
-#teamurldisplay a{
-	color: #0076b6;
-}
-/* Team link hover on the project 3 page */
-#teamurldisplay a:hover{
-	color: #E32225;
-}
-#logodisplay {
-	margin:auto;
-}
-
 /* Header "box" and all the elements within*/
 header {
 	color: #6C6C6C;
@@ -247,7 +237,7 @@ header a:hover {							/* when the nav links in the header are hovered over */
 #mystuff h1 {
 	float: right;
 	font-size: 60px;
-	text-shadow: -4px 4px 2px #000000,  4px 4px 2px #000000,  4px -4px 0 #000000,  -4px -4px 0 #000000;
+	text-shadow: -4px 4px 2px #000000, 4px 4px 2px #000000, 4px -4px 0 #000000, -4px -4px 0 #000000;
 }
 /* main content area for all pages except index */
 #main {
@@ -263,6 +253,8 @@ aside#sidebar {
 	float: right;
 	margin-top: 10px;
 	width: 30%;
+	height: auto;
+	margin-bottom: 100px;
 }
 /* link color in sidebar */
 aside a {
@@ -272,19 +264,17 @@ aside a {
 aside a:hover {
 	color: #FFFFFF;
 }
-/* message form in sidebar on contact page */
-aside#sidebar .messageform {
-	text-align: center;
-	height: 600px;
+input[type=text], input[type=email], textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	resize: vertical;
 }
-/* text field for message on contact page */
-aside#sidebar .messageform textarea {
-	height: 400px;
-}
-/* input fields on contact page */
-aside#sidebar .messageform input, aside#sidebar .messageform textarea {
-	width: 90%;
-	padding: 5px;
+
+label {
+	padding: 12px 12px 12px 0;
+	display: inline-block;
 }
 /*Contact Options List*/
 ul#contactme li {
@@ -315,4 +305,131 @@ footer nav {
 footer li {
 	display: inline;
 	padding: 0 20px 0 20px;
+}
+/* _________________________________________________________ Project 3 Styles _________________________________________________________ */
+
+/* styling for project 3 buttons																		*/
+.project3button {
+	border: 2px #000000 solid;
+	border-radius: 50px;
+	background-color: #ddd;
+	color: black;
+	padding: 16px 32px;
+	text-align: center;
+	font-size: 16px;
+	font-weight: bold;
+	margin: 5px;
+	transition: background 300ms ease;
+	display: inline-block;
+	text-decoration: none;
+	box-shadow: 0 8px #999;
+}
+/* no focus outline for the rounded buttons when clickec cuz... it looks dumb */
+.project3button:focus {
+	outline: none;
+}
+/* ID's for project 3 buttons */
+#packers:hover {
+	background-color: #203731;
+	color: #FFB612;
+}
+#packers:active {
+	background-color: #48635B;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+#bears:hover {
+	background-color: #0E234A;
+	color: #C83803;
+}
+#bears:active {
+	background-color: #2F436A;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+#vikings:hover {
+	background-color: #4F2683;
+	color: #FFC62F;
+}
+#vikings:active {
+	background-color: #73509F;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+#lions:hover {
+	background-color: #0076B6;
+	color: #B0B7BC;
+}
+#lions:active {
+	background-color: #429FD1;
+	box-shadow: 0 5px #666;
+	transform: translateY(4px);
+}
+/* Team links on the project 3 page */
+#teamurldisplay a {
+	color: #0076b6;
+}
+/* Team link hover on the project 3 page */
+#teamurldisplay a:hover {
+	color: #E32225;
+}
+#logodisplay {
+	margin: auto;
+}
+
+/* _________________________________________________________ Project 4 Styles _________________________________________________________ */
+
+/* message form on project 4 page */
+article#mainarticle .messageform {
+	text-align: left;
+	max-width: 90%;
+	padding: 0px 8px 8px 8px;
+}
+/* text field for message on project 4 page*/
+article#mainarticle .messageform .submitbutton {
+	width: 98%;
+	padding: 5px;
+}
+/* input fields on project 4 page */
+article#mainarticle .messageform input, article#mainarticle .messageform textarea {
+	width: 95%;
+	padding: 5px;
+}
+/* submit button on project 4 page */
+input[type=submit] {
+	background-color: #2589C9;
+	color: white;
+	padding: 12px 20px;
+	border: 3px solid black;
+	border-radius: 4px;
+	float: right;
+	width: 75%;
+	margin-bottom: 100px;
+	transition: 0.5s;
+	font-weight: bold;
+}
+/* submit button hover on project 4 page */
+input[type=submit]:hover {
+	background-color: #ffffff;
+	color: #2589C9;
+	padding: 12px 20px;
+	border: 3px solid black;
+	border-radius: 4px;
+	float: right;
+	width: 75%;
+	margin-bottom: 100px;
+	transition: 0.5s;
+	cursor: pointer;
+}
+
+/* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
+
+@media screen and (max-width: 700px) {
+.column25, .column75, input[type=submit] {
+	width: 100%;
+	margin-top: 0;
+}
+.msgbutton {
+	font-size: 14px;
+}
 }

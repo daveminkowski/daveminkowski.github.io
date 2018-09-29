@@ -50,24 +50,23 @@
     <aside id="sidebar">
       <div class="dark">
         <h2>Send me a message!</h2>
-        <p>(Kidding! This form doesn't work yet.)</p>
-        <form class="messageform">
-          <div>
-            <label>Name</label>
-            <br>
-            <input type="text" placeholder="Name">
+        <p id="errorDisplay" style="text-align: left"><em>Fields marked with * are required.</em></p>
+        <form onsubmit="return redirect();">
+          <div class="row">
+            <label for="name">Your Name: *</label>
+            <input type="text" id="name" placeholder="Your Name" style="border: 3px solid black" required>
           </div>
-          <div>
-            <label>Email</label>
-            <br>
-            <input type="email" placeholder="Email Address">
+          <div class="row">
+            <label for="email">Email Address: *</label>
+            <input type="email" id="email" placeholder="Your_Email@somesite.com" style="border: 3px solid black" required>
           </div>
-          <div>
-            <label>Message</label>
-            <br>
-            <textarea placeholder="Message"></textarea>
+          <div class="row">
+            <label for="subject">Message: *</label>
+            <textarea id="message" placeholder="Leave A Message..." style="height:200px; border: 3px solid black" required></textarea>
           </div>
-          <button class="submitbutton" type="submit">Send</button>
+          <div class="row">
+            <button class="msgbutton" type="submit" id="contactbutton"><span>Send Message</span></button>
+          </div>
         </form>
       </div>
     </aside>
@@ -84,5 +83,6 @@
   </nav>
   <p>2018 by Dave Minkowski.</p>
 </footer>
+<script src="scripts/website.contactvalidator.js"></script>
 </body>
 </html>
