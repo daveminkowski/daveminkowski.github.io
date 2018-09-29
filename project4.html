@@ -50,13 +50,11 @@
       <p>This is just a visually modified version of the form on my contact page. This form does not interact with any server-side handling (it's hosted on github) and is set to execute a redirect method which tries to simulate a confirmation of receipt.</p>
       <p>I've left the console logs intact to show how each element is reacting to input. I had limited homework time this week and I couldn't figure out email formatting validation without letting the browser handle it. Any help with that would be appreciated. </p>
       <div class="container">
-        <form onsubmit="return redirect();">
-          <div class="row">
             <div class="column25"></div>
             <div class="column75">
               <p id="notification" style="text-align: center">Fields marked with <span class="warn">*</span> are required.</p>
             </div>
-          </div>
+		  <form onsubmit="return redirect();">
           <div class="row">
             <div class="column25">
               <label for="name">Your Name: <span class="warn">*</span></label>
@@ -78,7 +76,7 @@
               <label for="message">Message: <span class="warn">*</span></label>
             </div>
             <div class="column75">
-              <textarea id="message" placeholder="Leave A Message..." style="height:200px; border: 3px solid black"></textarea>
+              <textarea id="message" placeholder="Leave A Message..." style="height:200px; border: 3px solid black" required></textarea>
             </div>
           </div>
           <div class="row">

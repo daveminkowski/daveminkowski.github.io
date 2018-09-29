@@ -4,7 +4,7 @@
 	var errorBox = document.getElementById("errorDisplay");					// error display paragraph
 	var submitButton = document.getElementById("contactbutton");			// submit button on form
 	
-	var errMsg = "Please ensure all highlighted fields are filled!";		// error message to display when an input is missing
+	var errMsg = "Please complete all fields";		// error message to display when an input is missing
 	
 	function redirect() {
 		window.open("msgconfirm.html", "_self");
@@ -18,7 +18,7 @@
 		if (nameBox.value && emailBox.value && messageBox.value) {
 		} else {
 			errorBox.innerHTML = errMsg;
-			alert("Please ensure all fields are completed :)");
+			alert(errMsg);
 		}
 	}
 	

@@ -7,16 +7,16 @@
 	var messageBox = document.getElementById("message");					// message text field
 	var notice = document.getElementById("notification");					// notification display paragraph
 	var submitButton = document.getElementById("contactbutton");			// submit button on form
-	var errMsg = "Please ensure all fields are complete :)";				// error message to display for any alert dialogs (just 1 for now)
+	var errMsg = "Please complete all fields";								// error message to display for any alert dialogs (just 1 for now)
 
 	// This function is called on a successful form submission. This will open the acknowledgemet.html page in the current browser window then
 	// halt the form from executing any further action. Without it being done this way with the "onsubmit" tag on the form element, my redirect
 	// would always come back as "page not found". I think the form is trying to post its data and cant (since I have no way to handle it) and
 	// the form action has to be stopped to avoid that outcome?
 	function redirect() {
-		console.log("Success - All three fields filled, email in correct format."); 
 		window.open("msgconfirm.html", "_self");
 		return false;
+		console.log("Success - All three fields filled, email in correct format."); 
 	}
 	
 	// the "final check" function. Since fields load as white-colored with no indication they are required, a final check is
@@ -26,7 +26,7 @@
 		validateEmail();
 		validateMessage();
 		if (nameBox.value && emailBox.value && messageBox.value) {
-			console.log("All three fields have a value. If page is not redirected, email is formatted incorrectly (handled by browser)."); 
+			console.log("All three fields have a value. If page is not redirected, email is formatted incorrectly (handled by browser).");
 		} else {
 			console.log("One or more fields is empty - show alert dialog here");
 			alert(errMsg);
