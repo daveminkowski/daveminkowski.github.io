@@ -14,13 +14,17 @@
 	// would always come back as "page not found". I think the form is trying to post its data and cant (since I have no way to handle it) and
 	// the form action has to be stopped to avoid that outcome?
 	function redirect() {
+		if (nameBox.value && emailBox.value && messageBox.value){
 		window.open("msgconfirm.html", "_self");
-		return false;
 		console.log("Success - All three fields filled, email in correct format."); 
+		return false;
+		} else {
+			return false;
+		}
 	}
 	
 	// the "final check" function. Since fields load as white-colored with no indication they are required, a final check is
-	// performed when the user tries to submit the form which will alert the user to the required input fields... I hope.
+	// performed when the user tries to submit the form which will alert the user to the required input fields... I hope
 	function verifyInput() {
 		validateName();
 		validateEmail();

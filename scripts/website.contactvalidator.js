@@ -7,8 +7,12 @@
 	var errMsg = "Please complete all fields";		// error message to display when an input is missing
 	
 	function redirect() {
+		if (nameBox.value && emailBox.value && messageBox.value){
 		window.open("msgconfirm.html", "_self");
 		return false;
+		} else {
+			return false;
+		}
 	}
 		
 	function verifyInput() {
