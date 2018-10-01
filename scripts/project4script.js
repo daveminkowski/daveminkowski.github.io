@@ -1,5 +1,7 @@
 	// project 4's script is slightly different than the script used on contact.html due to formatting and such. The website.contactvalidator.js
 	// file does not include commenting.
+	
+	// as this form is writtent, I don
 
 	// variables for functions
 	var nameBox = document.getElementById("name");							// name text field
@@ -31,7 +33,7 @@
 		validateMessage();
 		// these three methods are called again on form submission even if the user filled in all 3 fields correctly. while not the most elegant, complete solution, 
 		// the end result doesnt change for the user. The goal here was to make sure that the form field background color changes when it has no value, and 
-		// each of these methods already include that functionality
+		// each of these methods already include that functionality. Could probably make a funtion just to check all three simultaneously, but... I didnt.
 		if (nameBox.value && emailBox.value && messageBox.value) {
 			console.log("All three fields have a value. If page is not redirected, email is formatted incorrectly (handled by browser).");
 		} else {
@@ -40,38 +42,94 @@
 		}
 	}
 	
-	// check if name field has an entry, recolor background and show error message display if not. 
+// check if name field has an entry. If not, recolor background and show error message/console log. 
 	function validateName() {
-		if (!nameBox.value) {
-			nameBox.style.backgroundColor = "#F7F4B0";
-			console.log("missing name text");
+		try{
+			if (!nameBox.value) {
+				nameBox.style.backgroundColor = "#F7F4B0";
+				console.log("missing name text");
+				throw "Please enter your name.";
 			} else {
 				nameBox.style.backgroundColor = "";
-				console.log("successfully entered name text");
+				console.log("successfully entered NAME text.");
+				resetNotice();
+			}
+		} catch (err) {
+			notice.innerHTML = err;
+			}
+	}
+// check if email field has an entry. If not, recolor background and show error message/console log. 
+	function validateEmail() {
+		try{
+			if (!emailBox.value) {
+				emailBox.style.backgroundColor = "#F7F4B0";
+				console.log("missing EMAIL text");
+				throw "Please enter your email address.";
+			} else {
+				emailBox.style.backgroundColor = "";
+				console.log("successfully entered EMAIL text.");
+				resetNotice();
+			}
+		} catch (err) {
+			notice.innerHTML = err;
+			}
+	}
+// check if message field has an entry. If not, recolor background and show error message/console log. 
+	function validateMessage() {
+		try{
+			if (!messageBox.value) {
+				messageBox.style.backgroundColor = "#F7F4B0";
+				console.log("missing MESSAGE text");
+				throw "Please enter a message.";
+			} else {
+				messageBox.style.backgroundColor = "";
+				console.log("successfully entered MESSAGE text");
+				resetNotice();
+			}
+		} catch (err) {
+			notice.innerHTML = err;
 			}
 	}
 
-	// check if email field has an entry, recolor background and show error message display if not. 
-	function validateEmail() {
-		if (!emailBox.value) {
-			emailBox.style.backgroundColor = "#F7F4B0";
-			console.log("missing email text");
-		} else {
-			emailBox.style.backgroundColor = "";
-			console.log("successfully entered email text");
-			}
+// reset notification text
+	function resetNotice() {
+		if (nameBox.value && emailBox.value && messageBox.value) {
+			notice.innerHTML='Fields marked with <span class="warn">*</span> are required.';
+		}
 	}
-	
-	// check if message field has an entry, recolor background and show error message display if not. 
-	function validateMessage() {
-		if (!messageBox.value) {
-			messageBox.style.backgroundColor = "#F7F4B0";
-			console.log("missing message text");
-		} else {
-			messageBox.style.backgroundColor = "";
-			console.log("successfully entered message text");
-			}
-	}
+
+//	Old & Busted, no try/catch blocks
+//	function validateName() {
+//		if (!nameBox.value) {
+//			nameBox.style.backgroundColor = "#F7F4B0";
+//			console.log("missing name text");
+//			} else {
+//				nameBox.style.backgroundColor = "";
+//				console.log("successfully entered name text");
+//			}
+//	}
+//
+//	// check if email field has an entry, recolor background and show error message display if not. 
+//	function validateEmail() {
+//		if (!emailBox.value) {
+//			emailBox.style.backgroundColor = "#F7F4B0";
+//			console.log("missing email text");
+//		} else {
+//			emailBox.style.backgroundColor = "";
+//			console.log("successfully entered email text");
+//			}
+//	}
+//	
+//	// check if message field has an entry, recolor background and show error message display if not. 
+//	function validateMessage() {
+//		if (!messageBox.value) {
+//			messageBox.style.backgroundColor = "#F7F4B0";
+//			console.log("missing message text");
+//		} else {
+//			messageBox.style.backgroundColor = "";
+//			console.log("successfully entered message text");
+//			}
+//	}
 
 	// create backward compatible event listeners rather than putting them in html as onchange="validateName();" etc
 	// these event listeners respond to changes in the input fields
