@@ -9,7 +9,7 @@
 	var submitButton = document.getElementById("contactbutton");			// submit button on form
 	var errMsg = "Please complete all fields";								// error message to display for any alert dialogs (just 1 for now)
 
-	// This function is called on a successful form submission. This will open the acknowledgemet.html page in the current browser window then
+	// This function is called on a successful form submission. This will open the amsgconfirm.html page in the current browser window then
 	// halt the form from executing any further action. Without it being done this way with the "onsubmit" tag on the form element, my redirect
 	// would always come back as "page not found". I think the form is trying to post its data and cant (since I have no way to handle it) and
 	// the form action has to be stopped to avoid that outcome?
@@ -29,6 +29,9 @@
 		validateName();
 		validateEmail();
 		validateMessage();
+		// these three methods are called again on form submission even if the user filled in all 3 fields correctly. while not the most elegant, complete solution, 
+		// the end result doesnt change for the user. The goal here was to make sure that the form field background color changes when it has no value, and 
+		// each of these methods already include that functionality
 		if (nameBox.value && emailBox.value && messageBox.value) {
 			console.log("All three fields have a value. If page is not redirected, email is formatted incorrectly (handled by browser).");
 		} else {

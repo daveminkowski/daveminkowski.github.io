@@ -13,15 +13,12 @@ body {
 	margin: 0;
 	background-color: #F3F0F0;
 }
-/* global removal of hyperlink underlining*/
-a {
-	text-decoration: none;
-}
-/* bare naked floating hyperlinks (project 4 form confirmation page)*/
+
+/* global removal of hyperlink underlining/coloring*/
 a {
 	color: #2589C9;
+	text-decoration: none;
 }
-/* bare naked floating hyperlink hover (project 4 form confirmation page)*/
 a:hover {
 	color: red;
 }
@@ -164,6 +161,7 @@ ul {
 	width: 75%;
 	margin-top: 6px;
 }
+
 /* Header "box" and all the elements within*/
 header {
 	color: #6C6C6C;
@@ -306,6 +304,30 @@ footer li {
 	display: inline;
 	padding: 0 20px 0 20px;
 }
+
+/* styling for tables, table headers and table data */
+table, th, td {
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 2px;
+}
+th {
+	font-size: 15px;
+	text-align: justify;
+	padding: 8px;
+}
+
+td {
+	font-size: 12px;
+	padding: 8px;
+}
+
+/*
+td, th {
+	width: 1%;
+	padding: 3px;
+}
+*/
 /* _________________________________________________________ Project 3 Styles _________________________________________________________ */
 
 /* styling for project 3 buttons																		*/
@@ -379,6 +401,9 @@ footer li {
 
 /* _________________________________________________________ Project 4 Styles _________________________________________________________ */
 
+section {
+	margin-bottom:100px;
+}
 /* message form on project 4 page */
 article#mainarticle .messageform {
 	text-align: left;

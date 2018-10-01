@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+<title>Properties</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <h3 class="page-title">TEXT TEXT TEXT:</h3>
+    <p></p>
+  </div>
+</section>
+<footer>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script>
+		"use strict"; 
+		var attributeArray = 
+			["Browser name: ","Browser version: ","Operating platform: ","User agent: ",
+			 "Browser location and user permission settings: ","Active network connection: " ];
+	
+		var propertyArray = 
+			[navigator.appName, navigator.appVersion, navigator.platform, navigator.userAgent,
+			 navigator.geolocation, navigator.onLine];
+	
+		for (var i = 0; i < 6; i++) {
+			document.getElementById(i).innerHTML = attributeArray[i];	
+			document.getElementById(i+6).innerHTML = propertyArray[i]; 
+		}
+
+</script>
+</body>
+</html>

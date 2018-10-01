@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 5</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.05819.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 5 - Properties of the Navigator and Screen Objects:</h2>
+      <p><em>Add a page to your individual website that educates visitors about web security. Report the values of at least six properties from Tables 5-10 and 5-11 from Chapter 5 to illustrate the breadth of information about a user's computer that a web app can access. Perform a web search on practices for using the web safely, and include links to at least three sources, along with a one-sentence summary of each.</em></p>
+	  <h3 class="page-title">Safe Internet Browsing Techniques:</h3>
+      <p>Safe browsing is a oft-discussed topic in my household - we have 3 boys aged 11-14. Some of the behavior we've been trying to enforce involves creating secure passwords, browsing only trusted sites and refusing to share/protecting any personal or financial information. That's a small sample of our internet discussion topics at home, but the 3 links below can expand on other safe browsing tips and techniques:</p>
+		<ol>
+			<li><a href="https://ist.mit.edu/security/tips" target="_blank">MIT's 'Top Ten Safe Computing Tips'</a></li>
+			<p>MIT reminds us to physically secure our computers, our connections AND our data.</p>
+			<li><a href="https://support.mozilla.org/en-US/kb/how-stay-safe-web" target="_blank">Mozilla's 'How to stay safe on the web'</a></li>
+			<p>Despite my reluctance to leave my perfect little Google-integrated bubble behind, Mozilla Firefox is, in my estimation, the leader in mainstream browser security through it's library of plugins and extensions. </p>
+			<li><a href="https://www.getsafeonline.org/protecting-your-computer/safe-internet-use/" target="_blank">GetSafeOnline.org</a></li>
+			<p>GetSafeOnline is a website dedicated to identifying potential risks and learning how to avoid them. It covers fundamental technical safeguards like privacy and firewalls but expands pretty deeply into topics like cyberbullying and safe disposal of your smartphone.</p>
+		</ol>
+      <p>To further illustrate how your browser might be giving information away without your consent, the table below has been populated with information about your browser/computer. Involuntary surrendering your software version, OS or location presents a potential vulnerability. </p><p>This script is pretty simple, it colors alternating rows of the table and populates the value column with your browser data.</p>
+		<h3 class="page-title">Browser & Screen Object Properties:</h3>
+        <table style="width:100%">
+          <tr>
+            <th><span class="highlight">Object Name:</span></th>
+			  <th><span class="highlight">Description:</span></th>
+            <th><span class="highlight">Value From Your Browser:</span></th>
+          </tr>
+		  <tr>
+            <td><code>navigator.appName</code></td>
+			<td>Browser name</td>
+			  <td id="0"></td>
+          </tr>
+		  <tr>
+            <td><code>navigator.appVersion</code></td>
+			<td>Browser version</td>
+			  <td id="1"></td>
+          </tr>
+		  <tr>
+            <td><code>navigator.onLine</code></td>
+			<td>Whether the browser has a network connection</td>
+			  <td id="2"></td>
+          </tr>
+		  <tr>
+            <td><code>navigator.platform</code></td>
+			<td>OS running the browser</td>
+			  <td id="3"></td>
+          </tr>
+		  <tr>
+            <td><code>navigator.userAgent</code></td>
+			<td>Information about browser compatibility</td>
+			  <td id="4"></td>
+          </tr>
+			<tr>
+            <td><code>screen.width</code></td>
+			<td>Height of the display screen</td>
+			  <td id="5"></td>
+          </tr>
+		  <tr>
+            <td><code>screen.height</code></td>
+			<td>Width of the display screen</td>
+			  <td id="6"></td>
+          </tr>
+		  <tr>
+            <td><code>screen.pixelDepth</code></td>
+			<td>Resolution in bits per pixel</td>
+			  <td id="7"></td>
+          </tr>
+        </table>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 5 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson51/index.htm" target="_blank">Hands-On 5.1</a> - Printing browser's <em>Navigator Object</em> properties</p>
+        <p><a href="chapterprojects/handson52/index.htm" target="_blank">Hands-On 5.2</a> - Showing a confirmation window on button click</p>
+        <p><a href="chapterprojects/handson53/index.htm" target="_blank">Hands-On 5.3</a> - Using timer to close the confirmation window</p>
+        <p><a href="chapterprojects/handson54/index.htm" target="_blank">Hands-On 5.4</a> - Adding a close button to the confirmation window</p>
+        <p><a href="chapterprojects/handson55/index.htm" target="_blank">Hands-On 5.5</a> - Populating a list with loop-generated list items</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="scripts/website.browserObjects.js"></script>
+</body>
+</html>
