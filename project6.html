@@ -1,0 +1,142 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 6</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 6 - Validation handling with multiple input types.</h2>
+      <p><em>Add validation the code for one of the forms on your individual website. First, ensure that your form uses at least three of the following field types: check boxes, text boxes, option buttons, selection lists, and text areas. Then, program validation for your form ensuring that users enter values or make selections in all fields, and verifying at least one other aspect of at least one of the fields. Provide appropriate feedback to users when the form fails validation. Test your completed program until all validation works reliably with different combinations of valid and erroneous data.</em></p>
+      <h3 class="page-title">Name of the form:</h3>
+      <p>This form is just a quick mock up that simulates a few inquiry fields on a hypothetical computer hardware sales website. The user (who's purchasing a new motherboard) selects their cpu socket type, their preferred form factor and the manufacturer(s) of any boards this store might have in stock. The user must also enter their name, a contact email and a message in the text box before the form will allow submission.</p>
+	<p>The checkboxes don't have to be checked to submit the form. I guess I could just remove them. Eh.</p>
+      <div class="container">
+        <p id="notification" style="text-align: center; padding: 5px; border: 2px solid transparent">Fields marked with <span class="warn">*</span> are required.</p>
+        <form onsubmit="return redirect();" novalidate="novalidate">
+          <fieldset id="socket">
+            <div class="row">
+              <div class="column25">
+                <label for="cputype">CPU Socket Type: <span class="warn">*</span></label>
+              </div>
+              <div class="column75">
+                <input type="radio" name="cputype" id="intel" value="intel"/>
+                <label for="intel">Intel Socket 1151</label>
+                <input type="radio" name="cputype" id="amd" value="amd"/>
+                <label for="amd">AMD Socket AM4</label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="row">
+              <div class="column25">
+                <label for="mobosize">Form Factor: <span class="warn">*</span></label>
+              </div>
+              <div class="column75">
+                <select id="mobosize" name="mobosize" required="required">
+                  <option value="atx">ATX</option>
+                  <option value="uatx">Micro ATX</option>
+                  <option value="mitx">Mini ITX</option>
+                  <option value="eatx">Extended ATX</option>
+                </select>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="row">
+              <div class="column25">
+                <label for="moboMaker">Manufacturer:</label>
+              </div>
+              <div class="column75">
+                <input type="checkbox" id="asro" name="moboMaker"/>
+                <label for="asro">ASRock</label>
+                <input type="checkbox" id="asus" name="moboMaker"/>
+                <label for="asus">ASUS</label>
+                <input type="checkbox" id="giga" name="moboMaker"/>
+                <label for="giga">Gigabyte</label>
+                <input type="checkbox" id="msi" name="moboMaker"/>
+                <label for="msi">MSI</label>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="row">
+              <div class="column25">
+                <label for="name">Your Name: <span class="warn">*</span></label>
+              </div>
+              <div class="column75">
+                <input type="text" id="name" placeholder="Your Name" style="border: 3px solid #8A8A8A" required="required">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column25">
+                <label for="email">Email Address: <span class="warn">*</span></label>
+              </div>
+              <div class="column75">
+                <input type="email" id="email" placeholder="Your_Email@somesite.com" style="border: 3px solid #8A8A8A" required="required">
+              </div>
+            </div>
+            <div class="row">
+              <div class="column25">
+                <label for="message">Additional Comments: <span class="warn">*</span></label>
+              </div>
+              <div class="column75">
+                <textarea id="message" placeholder="Leave A Message..." style="height:200px; border: 3px solid #8A8A8A" required="required"></textarea>
+              </div>
+            </div>
+            <div class="row">
+              <input type="submit" value="Submit" id="contactbutton">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 6 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson61/index.htm" target="_blank">Hands-On 6.1</a> - Creating backward-compatible validation functions</p>
+        <p><a href="chapterprojects/handson62/index.htm" target="_blank">Hands-On 6.2</a> - Simulating the <code>placeholder</code> attribute in IE8</p>
+        <p><a href="chapterprojects/handson63/index.htm" target="_blank">Hands-On 6.3</a> - Auto-shift focus from completed SSN fields</p>
+        <p><a href="chapterprojects/handson64/index.htm" target="_blank">Hands-On 6.4</a> - Remove default selection from <code>select</code> element</p>
+        <p><a href="chapterprojects/handson65/index.htm" target="_blank">Hands-On 6.5</a> - Enhanced validation for hands-on project 6-4</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="scripts/project6script.js"></script>
+</body>
+</html>

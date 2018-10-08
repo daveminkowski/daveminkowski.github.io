@@ -404,6 +404,7 @@ td, th {
 section {
 	margin-bottom:100px;
 }
+
 /* message form on project 4 page */
 article#mainarticle .messageform {
 	text-align: left;
@@ -429,7 +430,6 @@ input[type=submit] {
 	border-radius: 4px;
 	float: right;
 	width: 75%;
-	margin-bottom: 100px;
 	transition: 0.5s;
 	font-weight: bold;
 }
@@ -442,9 +442,21 @@ input[type=submit]:hover {
 	border-radius: 4px;
 	float: right;
 	width: 75%;
-	margin-bottom: 100px;
 	transition: 0.5s;
 	cursor: pointer;
+}
+
+/* _________________________________________________________ Project 6 Styles _________________________________________________________ */
+
+select {
+    width: 50%;
+    height: 30px;
+    border-width: 3px;
+    margin: 10px 10px 10px 0px;
+}
+
+input[type=checkbox] {
+  transform: scale(1.6);
 }
 
 /* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
