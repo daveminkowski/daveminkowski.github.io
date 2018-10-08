@@ -1,10 +1,8 @@
-// variables for functions
+// variables representing form components
 var nameBox = document.getElementById("name"); 					// name text field
 var emailBox = document.getElementById("email"); 				// email text field
 var messageBox = document.getElementById("message"); 			// message text field
 var notice = document.getElementById("notification"); 			// notification display paragraph
-var submitButton = document.getElementById("contactbutton"); 	// submit button on form
-
 var sizeSelector = document.getElementById("mobosize");			// selector element
 var custForm = document.getElementsByTagName("form")[0]; 		// the form as an object
 var cpuBoxes = document.getElementsByName("cputype");			// the radio selector
@@ -18,20 +16,17 @@ var formValidity = true;
 function validateRequired() {
 	"use strict";
 	var fieldsetValidity = true;
-	var inputElements = document.querySelectorAll("input[required]");
-	var elementCount = inputElements.length;
 	var currentElement;
 
 	try {
-		for (var i = 0; i < elementCount; i++) {
-			// validate all required input elements in fieldset (elements with the required="required" tag in html)
-			currentElement = inputElements[i];
-			if (currentElement.value === "") {						// if no entry, recolor and set fieldsetValidity = false;
-				currentElement.style.backgroundColor = "#F7F4B0";
-				fieldsetValidity = false;
-			} else {
-				currentElement.style.background = "white";			// otherwise, do nothing or change bg color back to white
-			}
+		// verify that a cpu type is selected
+		if (!cpuBoxes[0].checked && !cpuBoxes[1].checked) {
+			cpuBoxes[0].style.outline = "1px solid red";			// if unchecked, recolor, set red border and set fieldsetValidity = false;
+			cpuBoxes[1].style.outline = "1px solid red";
+			fieldsetValidity = false;
+		} else {
+			cpuBoxes[0].style.outline = "";
+			cpuBoxes[1].style.outline = "";
 		}
 		
 		// verify a motherboard size has been chosen in the selector element
@@ -43,16 +38,6 @@ function validateRequired() {
 		} else {
 			currentElement.style.border = "";						// otherwise, remove red border and change bg color back to white
 			currentElement.style.background = "white";
-		}
-		
-		// verify that a cpu type is selected
-		if (!cpuBoxes[0].checked && !cpuBoxes[1].checked) {
-			cpuBoxes[0].style.outline = "1px solid red";			// if unchecked, recolor, set red border and set fieldsetValidity = false;
-			cpuBoxes[1].style.outline = "1px solid red";
-			fieldsetValidity = false;
-		} else {
-			cpuBoxes[0].style.outline = "";
-			cpuBoxes[1].style.outline = "";
 		}
 
 		// verify that a name has been entered. If not, recolor background and focus the cursor on the missing field. 
@@ -93,7 +78,6 @@ function validateRequired() {
 		// if any of the validation returns fails, return false to the validateForm() method. 
 	} catch (msg) {
 		formValidity = false;
-		
 		// while this is where the error will be caught, the field color change and boolean return of each required field is handled above, per field.
 		// ANY failed validity will change the notification text just above the form (to an error message stored as a string), cause the background
 		// color of the missing field(s) to change to yellow and show a pop up alert to the user. If the cpu or form factor isn't chosen from the form

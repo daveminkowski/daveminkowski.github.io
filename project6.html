@@ -36,8 +36,8 @@
 	<p>The checkboxes don't have to be checked to submit the form. I guess I could just remove them. Eh.</p>
       <div class="container">
         <p id="notification" style="text-align: center; padding: 5px; border: 2px solid transparent">Fields marked with <span class="warn">*</span> are required.</p>
-        <form onsubmit="return redirect();" novalidate="novalidate">
-          <fieldset id="socket">
+        <form novalidate="novalidate">
+          <fieldset id="cpusocket">
             <div class="row">
               <div class="column25">
                 <label for="cputype">CPU Socket Type: <span class="warn">*</span></label>
@@ -50,7 +50,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset id="formfactor">
             <div class="row">
               <div class="column25">
                 <label for="mobosize">Form Factor: <span class="warn">*</span></label>
@@ -65,7 +65,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset id="manufacturer">
             <div class="row">
               <div class="column25">
                 <label for="moboMaker">Manufacturer:</label>
@@ -82,7 +82,7 @@
               </div>
             </div>
           </fieldset>
-          <fieldset>
+          <fieldset id="contactinfo">
             <div class="row">
               <div class="column25">
                 <label for="name">Your Name: <span class="warn">*</span></label>
