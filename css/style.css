@@ -448,6 +448,7 @@ input[type=submit]:hover {
 
 /* _________________________________________________________ Project 6 Styles _________________________________________________________ */
 
+/* Change styling of selection box */
 select {
     width: 50%;
     height: 30px;
@@ -455,7 +456,13 @@ select {
     margin: 10px 10px 10px 0px;
 }
 
+/* Change scale of checkboxes*/
 input[type=checkbox] {
+  transform: scale(1.6);
+}
+
+/* Change scale of radio buttons */
+input[type=radio] {
   transform: scale(1.6);
 }
 
