@@ -21,9 +21,9 @@ function validateRequired() {
 	try {
 		// verify that a cpu type is selected
 		if (!cpuBoxes[0].checked && !cpuBoxes[1].checked) {
-			cpuBoxes[0].style.outline = "2px solid red"; // if unchecked, recolor, set red border and set fieldsetValidity = false;
+			cpuBoxes[0].style.outline = "1px solid red"; // if unchecked, recolor, set red border and set fieldsetValidity = false;
 			cpuBoxes[0].style.backgroundColor = "#F7F4B0";
-			cpuBoxes[1].style.outline = "2px solid red";
+			cpuBoxes[1].style.outline = "1px solid red";
 			cpuBoxes[1].style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
 		} else {
@@ -34,7 +34,7 @@ function validateRequired() {
 		// verify a motherboard size has been chosen in the selector element
 		currentElement = document.querySelectorAll("select")[0];
 		if (currentElement.selectedIndex === -1) { // if no selection, recolor, set red border and set fieldsetValidity = false;
-			currentElement.style.border = "3px solid red";
+			currentElement.style.border = "2px solid red";
 			currentElement.style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
 		} else {
@@ -46,11 +46,11 @@ function validateRequired() {
 		if (!nameBox.value) {
 			nameBox.style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
-			nameBox.style.border = "3px solid red";
+			nameBox.style.border = "2px solid red";
 			nameBox.focus();
 		} else {
 			nameBox.style.backgroundColor = "#FFFFFF";
-			nameBox.style.border = "3px solid #8A8A8A";
+			nameBox.style.border = "2px solid #8A8A8A";
 		}
 
 		// verify that an email address has been entered. If not, recolor background and focus the cursor on the missing field.
@@ -59,22 +59,22 @@ function validateRequired() {
 		if (!emailBox.value || !validateEmailFormat()) {
 			emailBox.style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
-			emailBox.style.border = "3px solid red";
+			emailBox.style.border = "2px solid red";
 			emailBox.focus();
 		} else {
 			emailBox.style.backgroundColor = "#FFFFFF";
-			emailBox.style.border = "3px solid #8A8A8A";
+			emailBox.style.border = "2px solid #8A8A8A";
 		}
 
 		// verify that a message has been entered. If not, recolor background and focus the cursor on the missing field.
 		if (!messageBox.value) {
 			messageBox.style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
-			messageBox.style.border = "3px solid red";
+			messageBox.style.border = "2px solid red";
 			messageBox.focus();
 		} else {
 			messageBox.style.backgroundColor = "#FFFFFF";
-			messageBox.style.border = "3px solid #8A8A8A";
+			messageBox.style.border = "2px solid #8A8A8A";
 		}
 
 		// finally, if any of the above required validation is not met, throw the error message. Otherwise, validation is successful and no further action is needed.
@@ -109,6 +109,7 @@ function validateForm(event) {
 	if (formValidity === true) { // if validation is true, submit the form
 		custForm.submit();
 	} else {
+		notice.style.borderColor = "red";
 		alert(errMsg);
 	}
 }
