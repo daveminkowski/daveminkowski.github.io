@@ -8,12 +8,10 @@ var custForm = document.getElementsByTagName("form")[0]; // the form as an objec
 var cpuBoxes = document.getElementsByName("cputype"); // the radio selector
 
 // error message to display for any alert dialogs (just 1 for now)
-var errMsg = 'Please complete all required fields';
+var errMsg = "Please complete all required fields. Email must be entered as 'name@domain.com'";
 // boolean variable to return (in)valid entries
 var formValidity = true;
-// regex to check the format of the email field. not completely comprehensive, but at least checks for a name@domain.com formatand will no
-// longer accepts emails such as name@ or name@website
-var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
 /* validate required fields */
 function validateRequired() {
 	"use strict";
@@ -56,9 +54,9 @@ function validateRequired() {
 		}
 
 		// verify that an email address has been entered. If not, recolor background and focus the cursor on the missing field.
-		// second half of the if condition checks the email format and returns false if the email is incorrectly formatted, which
-		// disallows form submission
-		if (!emailBox.value || (!filter.test(emailBox.value))) {
+		// second half of the if condition checks the email format and returns false if the email is incorrectly formatted or absent, which
+		// disallows form submission (fieldsetvalidity = false)
+		if (!emailBox.value || !validateEmailFormat()) {
 			emailBox.style.backgroundColor = "#F7F4B0";
 			fieldsetValidity = false;
 			emailBox.style.border = "3px solid red";
@@ -110,10 +108,21 @@ function validateForm(event) {
 
 	if (formValidity === true) { // if validation is true, submit the form
 		custForm.submit();
-
-	} else { // otherwise change notification text to the error message
-		notice.style.borderColor = "red";
+	} else {
 		alert(errMsg);
+	}
+}
+
+function validateEmailFormat() {
+	"use strict";
+// regex variable which is used to check the format of the email field. This is not comprehensive, but at least checks for a name@domain.com format and no
+// longer accepts emails such as name@ or name@website or name@website. or name@website.c
+	
+	var emailFilter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+	if (!emailFilter.test(emailBox.value)) {
+		return false;
+	} else {
+		return true;
 	}
 }
 
