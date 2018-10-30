@@ -9,7 +9,6 @@ var currYear = today.getFullYear();
 var currMonth = today.getMonth() + 1; // months begin at 0 in date objects
 var currDay = today.getDate();
 
-//var dateForm = document.getElementsByTagName("form")[0]; // the form as an object
 // form fields
 var todayField = document.getElementById("today"); // displays today's date
 var startDate = document.getElementById("startDate"); // field for the user-entered date
@@ -39,7 +38,7 @@ function calculateDifference() {
 
 	// math variables
 
-	// get the difference in time that's passed between the dates
+	// get the difference in milliseconds that's elapsed between the two dates
 	var difference = todayMS - startDateMS;
 	// total number of days spanning the difference in dates, converted from milliseconds
 	var totaldays = Math.floor(difference / dayLength)-1;
