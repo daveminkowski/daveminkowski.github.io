@@ -7,7 +7,9 @@ var heroRankArray = [];
 						
 // the selector element
 var heroPicker = document.getElementById("heroPicker");
-var errMsg = "Please make a selection";
+
+// error message when pressing add while no option is selected
+// var errMsg = "Please make a selection";
 
 function refreshList() {
 	"use strict";
@@ -19,13 +21,13 @@ function refreshList() {
 	var rankedList = document.getElementById("rankedListOfHeroes"); 		// Ordered List where hero names will appear
 	var heroSlot = rankedList.getElementsByTagName("li");					// LI elements within the ordered list
 	var removalButtonList = document.getElementById("removalButtons");		// Ordered list where the removal buttons will appear when hero is added
-	var removalButton = removalButtonList.getElementsByTagName("li"); 		// LI elements within the list (of buttons)
+	var removalButtonLi = removalButtonList.getElementsByTagName("li"); 		// LI elements within the list (of buttons)
 	
 	// CLEAR THE LIST FIRST:
 	// iterate through each existing LI element of both ordered lists and remove them:
 	for (var j = heroSlot.length - 1; j >= 0; j--) {
 		rankedList.removeChild(heroSlot[j]);
-		removalButtonList.removeChild(removalButton[j]);
+		removalButtonList.removeChild(removalButtonLi[j]);
 	}
 	
 	// RECREATE THE LIST SECOND:
@@ -61,7 +63,7 @@ function refreshList() {
 		// finally, add an event listener to the created button
 		if (removalButton.addEventListener) {
         	removalButton.addEventListener("click", removeHeroFromList, false);
-      	} else if (lastFirstButton.attachEvent)  {
+      	} else if (removalButton.attachEvent)  {
         	removalButton.attachEvent("onclick", removeHeroFromList);
 		}
 	}
@@ -70,7 +72,7 @@ function refreshList() {
 
 // ADD A HERO TO THE LIST/ARRAY
 function addHeroToList() {
-	"use strict"
+	"use strict";
 	// the value of the currently selected option
 	// optionally, eliminate the heroPicker variable and just declare: var newHero = document.getElementById("heroPicker").value;
 	var newHero = heroPicker.value;
@@ -82,6 +84,7 @@ function addHeroToList() {
 
 // REMOVE A HERO TO THE LIST/ARRAY
 function removeHeroFromList(evt) {
+	"use strict";
 	if (evt === undefined) { // get caller element in IE8
 		evt = window.event;
    }
@@ -90,7 +93,7 @@ function removeHeroFromList(evt) {
    var parentItem = callerElement.parentNode;
    for (var i = 0; i < heroRankArray.length; i++) {
       if (parentItem.innerHTML.search(heroRankArray[i]) !== -1) {
-         var itemToMove = heroRankArray.splice(i, 1);
+         var heroToRemove = heroRankArray.splice(i, 1);
       }
    }
    refreshList();
@@ -98,6 +101,7 @@ function removeHeroFromList(evt) {
 	
 // DISPLAY THE CURRENT ARRAY VALUES
 function arrayDisplay() {
+	"use strict";
 	// the paragraph element where the array values will be displayed
 	var arrayValues = document.getElementById("arrayValues");
 	
@@ -129,11 +133,11 @@ function setUpPage() {
 
 //////////////////////////////////////////////// PAGE SETUP FUNCTIONS ////////////////////////////////////////////////
 
-// remove default value from motherboard size list (make the list appear empty, requiring a selection)
-function removeSelectDefault() {
-	"use strict";
-	heroPicker.selectedIndex = -1;
-}
+// remove default value from hero list (not used yet)
+//function removeSelectDefault() {
+//	"use strict";
+//	heroPicker.selectedIndex = -1;
+//}
 
 // create event listeners for the add button
 function createEventListener() {
@@ -150,22 +154,24 @@ function createEventListener() {
 	
 // randomize the array
 function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-  return array;
+	"use strict";
+	var currentIndex = array.length, temporaryValue, randomIndex;
+  	// While there remain elements to shuffle...
+  	while (0 !== currentIndex) {
+    	// Pick a remaining element...
+    	randomIndex = Math.floor(Math.random() * currentIndex);
+    	currentIndex -= 1;
+    	// And swap it with the current element.
+    	temporaryValue = array[currentIndex];
+    	array[currentIndex] = array[randomIndex];
+    	array[randomIndex] = temporaryValue;
+  	}
+  	return array;
 }
 
 // populate the selector element with options
 function createSelectorOptions() {
+	"use strict";
 	// randomize the original array of names
 	shuffle(baseArray);
 	// for each name in the array, create a selector option for the drop-down selector
