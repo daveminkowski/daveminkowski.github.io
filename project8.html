@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 8</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 8 - Saving list items as an array of strings</h2>
+      <p><em>Enhance the feedback form in your project to enable users to choose one or more options from a list of at least five options. Include code that adds user selections to either an array or an object, and ensure that if a user deselects one of the options, it is removed from the array or object. Add code to convert the array or object to a string.</em></p>
+      <h3 class="page-title">Video Game Hero Ranker</h3>
+      <p>Choose any of the 10 video game protagonists list below, ordered randomly on page load. Selecting a character and clicking the "add" button will rank them in the order you choose - the ranked list will appear below the selection box once you make your first choice. Click the appropriate remove button to delete the character from the list and remove its value from the array.</p>
+      <br>
+      <div class="container">
+        <form>
+          <fieldset>
+            <div class="column25">
+              <label for="heroPicker">Hero Picker:</label>
+            </div>
+            <div class="column75">
+              <select id="heroPicker" name="heroPicker">
+              </select>
+              <button type="button" class="project8button" id="heroAdd">Add</button>
+              &emsp; </div>
+          </fieldset>
+          <fieldset>
+            <div class="column25">
+              <label for="rankedListOfHeroes">Ranked List:</label>
+            </div>
+            <div class="column25">
+              <ol id="rankedListOfHeroes">
+              </ol>
+            </div>
+            <div class="column50">
+              <ol id="removalButtons" style="list-style: none">
+              </ol>
+            </div>
+          </fieldset>
+          <fieldset>
+            <div class="column25">
+              <label for="arrayValues">Array Values:</label>
+            </div>
+            <div class="column75">
+              <p id="arrayValues"></p>
+            </div>
+          </fieldset>
+        </form>
+        <p><strong>Additionally:</strong>
+        <ol>
+          <li>This script takes the value from the selector and puts it into an array when the "add" button is clicked. Whenever a name is added or removed, the list is deleted then recreated based on the existing elements in the array, giving the appearance of being refreshed. Each button is created on the fly as the name is selected form the list and functions as a way to remove the name from the list and from the array (which will then refresh the visual list). Just for fluff, the names in the selector element are randomized on page load.</li>
+          <li>The "Array Values" display is just a visual representation of each array element being added or removed from the array. The functionality is the same as adding to the ordered list, but I think it helps to show how the array is actually reordered rather than just displaying elements of an array that could potentially contain empty elements after they've been removed from the list. </li>
+		  <li>The last thing I'd want is for each name in the selector to be disabled once it was selected then enabled once it was removed from the ranked list. Being able to add the same value several times consecutively makes for some weirdness when trying to remove that name. Being totally honest here, Packers are playing the Patriots in an hour and I still have to comment my script so I'm willing to leave it as is.</li>
+        </ol>
+        </p>
+      </div>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 8 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson81/index.htm" target="_blank">Hands-On 8.1</a> - Storing input as an array</p>
+        <p><a href="chapterprojects/handson82/index.htm" target="_blank">Hands-On 8.2</a> - Storing input as an object</p>
+        <p><a href="chapterprojects/handson83/index.htm" target="_blank">Hands-On 8.3</a> - Identifying a credit card type</p>
+        <p><a href="chapterprojects/handson84/index.htm" target="_blank">Hands-On 8.4</a> - To-do list items in an array</p>
+        <p><a href="chapterprojects/handson85/index.htm" target="_blank">Hands-On 8.5</a> - To-do list with first/last buttons</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+	<script src="scripts/project8script.js"></script>
+</body>
+</html>

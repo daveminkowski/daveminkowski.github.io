@@ -65,6 +65,28 @@ ul {
 	background-color: #2589C9;
 	color: #ffffff;
 }
+
+/* styling for project8 button																		*/
+.project8button {
+	padding: 0.1rem 1rem;
+	border: 1px #000000 solid;
+	border-radius: 50px;
+	text-decoration: none;
+	color: #000000;
+	background-color: transparent;
+	transition: background 500ms ease;
+	font-size: 12px;
+	align-items: center;
+	
+}
+/* project8 button hover */
+.project8button:hover {
+	background-color: #2589C9;
+	color: #ffffff;
+}
+.project8button:focus {
+	outline :none;
+} 
 /* the dark blue style for sidebars;																		*/
 .dark {
 	padding: 15px;
@@ -153,6 +175,12 @@ ul {
 .column25 {
 	float: left;
 	width: 25%;
+	margin-top: 6px;
+}
+/* 50% width of main article div */
+.column50 {
+	float: left;
+	width: 50%;
 	margin-top: 6px;
 }
 /* 75% width of main article div */
