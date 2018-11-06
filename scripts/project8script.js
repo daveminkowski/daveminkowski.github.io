@@ -103,15 +103,34 @@ function disableIndex() {
 }
 
 // DISABLE/ENABLE ADD BUTTON
-// disable the add button when the number of options is the same as the number of choices in the array
+// disable the add button when the number of options is the same as the number of choices in the array (10)
 function disableAddButton() {
 	"use strict";
+	// option elements as an object
+	var selectorElement = document.getElementsByTagName("option");
+	
 	// number of options in the selector
 	var numOfOptions = document.getElementsByTagName("option");
+	// if number of created option elements equals the number of array elements (all heroes have been chosen)
 	if (numOfOptions.length === heroRankArray.length) {
+		// disable the add button
 		addButton.disabled = true;
+		// empty the selector
+		heroPicker.selectedIndex = -1;
+		// ensure ALL options are disabled
+		for (var i = 0; i < heroRankArray.length; i++){
+			selectorElement[i].disabled = true;
+		}
 	} else {
+		// if the number of chooseable options is < number of array elements (10), enable the add button
 		addButton.disabled = false;
+		// move the selector to an available option
+		for (var j = 0; j < heroRankArray.length; j++){
+			if (!selectorElement[j].disabled) {
+				heroPicker.selectedIndex = j;
+			}
+			
+		}
 	}
 }
 
@@ -197,7 +216,7 @@ function removeHeroFromList(evt) {
 		
 		// this is searching parent elements for an array string that matches the name of the hero, then remove it from the array
 		if (parentItem.innerHTML.search(heroRankArray[i]) !== -1) {
-			var heroToRemove = heroRankArray.splice(i, 1);
+			heroRankArray.splice(i, 1);
 			
 		}
 	}
@@ -208,7 +227,7 @@ function removeHeroFromList(evt) {
 function enableIndex(buttonName) {
 	"use strict";
 	// I thought this was pretty clever if I do say so myself. The name of the button is passed into the function, which then splits 
-	// the button name into an array or 2 strings at the # symbol. The value I want is everything after that (the name of the hero)
+	// the button name into an array of 2 strings at the # symbol. The value I want is everything after that (the name of the hero)
 	var heroName = buttonName.split('#')[1];
 	// debugging
 	//console.log("Function passed this button name: " + buttonName);
