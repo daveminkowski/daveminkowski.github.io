@@ -87,6 +87,8 @@ function disableIndex() {
 	// user's currently selected index
 	//var selectedHero = heroPicker.selectedIndex;
 	var heroName = heroPicker.value;
+	console.log ("The name of the hero is " + heroName);
+	console.log ("The selection index is  " + heroPicker.selectedIndex);
 	var trimmedHeroName = heroName.split(' ').join('');
 	// testing it works:
 	//console.log("Disabling this character's selector : " + trimmedHeroName);
@@ -143,7 +145,7 @@ function moveSelector() {
 	// for each option element on the page, check if the element has been disabled. If not, change the selected index to one of those indices
 	for (var i = 0; i < numOfOptions.length; i++) {
 		// if the currently selected option is disabled, do nothing and continue to iterate through the loop
-		if (isDisabled()) {
+		if (isEnabled()) {
 			// if currently selected option is NOT disabled, set the selector to the first available hero in the list
 		} else {
 			heroPicker.selectedIndex = i;
@@ -152,7 +154,7 @@ function moveSelector() {
 }
 
 // boolean switch to route the logic in the moveSelector() function
-function isDisabled() {
+function isEnabled() {
 	"use strict";
 	var heroName = heroPicker.value;
 	var trimmedHeroName = heroName.split(' ').join('');
