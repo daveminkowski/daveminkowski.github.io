@@ -84,16 +84,17 @@ function refreshList() {
 // This function disables choices from the selector that have already been made (no duplicates)
 function disableIndex() {
 	"use strict";
-	// user's currently selected index
-	//var selectedHero = heroPicker.selectedIndex;
+	// currently selected index value (name)
 	var heroName = heroPicker.value;
-	console.log ("The name of the hero is " + heroName);
-	console.log ("The selection index is  " + heroPicker.selectedIndex);
+	//console.log ("The name of the hero is " + heroName);
+	//console.log ("The selection index is  " + heroPicker.selectedIndex);
 	var trimmedHeroName = heroName.split(' ').join('');
+	//console.log ("The trimmed name of the hero is " + trimmedHeroName);
 	// testing it works:
 	//console.log("Disabling this character's selector : " + trimmedHeroName);
 	// string to reference names of option elements
 	var optionString = "option" + trimmedHeroName;
+	//console.log("The option object's name is " + optionString);
 	// variable to reference the element object each hero is stored under (when created by the page load function)
 	var optionToRemove = document.getElementById(optionString);
 	// disabled the chosen option
@@ -137,7 +138,7 @@ function disableAddButton() {
 }
 
 // MOVE THE SELECTOR
-//once an option has been disabled, the selector needs to move to a non-disabled option to avoid duplicate entries
+//once an option has been disabled, the selectedIndex needs to move to a non-disabled option to avoid duplicate entries
 function moveSelector() {
 	"use strict";
 	// number of options in the selector
@@ -181,8 +182,9 @@ function addHeroToList() {
 	// add selection option to heroRankArray
 	heroRankArray.push(newHero);
 	// call the refreshList function
-	refreshList();
 	disableIndex();
+	refreshList();
+	
 }
 
 // DISPLAY THE CURRENT ARRAY VALUES
