@@ -33,8 +33,7 @@
       <p><em>Enhance the personal website you've created in the preceding chapters of this book to prevent security issues. To do this, review each form field in your site and identify any additional validation that you could reasonably add. In particular, look for situations where you could use a regular expression to limit the allowable characters in order to exclude characters used in creating JavaScript code. Use word-processing software to create a table like Table 9-4 (on page 679), which includes an example. Add a row for each form field in your website, and then save this document in the root of your site.</em></p>
       <h3 class="page-title">Hardware Order Form:</h3>
       <p>I'm copying the hardware order form from <a href="project6.html"><strong>Project 6</strong></a> and adding regular expressions to validate field entries. The email format must follow the <em><strong>name@domain.com</strong></em> convention, but it does allow for domain extensions larger than 2 characters (.co, .us, .tv). </p>
-      <p><em>Earlier today the regex was limiting domain extensions to 4 characters... I changed something and now that's not working, so I'm working on that too.</em></p>
-      <p>The name and messge input fields are limited to A-Z, a-z, 0-9, whitespace, apostrophes & hyphens. They pass their element name to a method which checks for acceptable characters and returns a boolean which is passed on to the for validation method.</p>
+      <p>The name and messge input fields are limited to A-Z, a-z, 0-9, whitespace, apostrophes & hyphens.</p>
       <div class="container">
         <p id="notification" style="text-align: center; padding: 5px; border: 2px solid transparent">Fields marked with <span class="warn">*</span> are required.</p>
         <form novalidate="novalidate">
