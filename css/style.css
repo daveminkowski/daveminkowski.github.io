@@ -144,9 +144,9 @@ ul {
 	height: auto;
 }
 /* the index.html and project.html boxes */
-.myboxes .box, .projectboxes .box, .bottomboxes .box {
+.myboxes .box, .projectboxes .box {
 	max-width: 20%;
-	padding: 20px 15px 20px 15px;
+	padding: 5px 10px 5px 10px;
 	margin-top: 90px;
 	display: inline-block;
 }
