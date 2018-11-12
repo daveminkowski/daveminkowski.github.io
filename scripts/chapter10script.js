@@ -30,9 +30,6 @@ function createMap(position) {
 	// rounded to 5 decimal places (not being used)
 	//var CurrLat = Lat.toFixed(5);
 	var Lng = position.coords.longitude;
-	// rounded to 5 decimal places (not being used)
-	//var CurrLong = Lng.toFixed(5);
-	var CurrAlt = position.coords.altitude;
 	
 	// mapOptions parameter for google maps api - hybrid map shows satellite and street views, zoom level 15 is street-level zoom
 	// zoom1: world
@@ -42,7 +39,7 @@ function createMap(position) {
 	// zoom20: Buildings
 	
 	var mapOptions = {
-		center: new google.maps.LatLng(CurrLat, CurrLong),
+		center: new google.maps.LatLng(Lat, Lng),
 		zoom: 15,
 		mapTypeId: 'hybrid', 
 	};
@@ -81,6 +78,7 @@ function displayLocationElevation(location, elevator, infowindow) {
 		if (status === 'OK') {
 			// Retrieve the first result
 			if (results[0]) {
+				// results[0].elevation is the value for the altitude
 				// Open the infowindow indicating the elevation at the clicked position.
 				// round elevation value to 2 decimal places
 				var roundedElevation = results[0].elevation.toFixed(2); 
