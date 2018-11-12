@@ -26,10 +26,8 @@ function createMap(position) {
 	"use strict";
 	clearTimeout(wait);
 	// latitude, longitude and altitude variables for respective display elements
-	var Lat = position.coords.latitude;
-	// rounded to 5 decimal places (not being used)
-	//var CurrLat = Lat.toFixed(5);
-	var Lng = position.coords.longitude;
+	var CurrLat = position.coords.latitude;
+	var CurrLong = position.coords.longitude;
 	
 	// mapOptions parameter for google maps api - hybrid map shows satellite and street views, zoom level 15 is street-level zoom
 	// zoom1: world
@@ -39,7 +37,7 @@ function createMap(position) {
 	// zoom20: Buildings
 	
 	var mapOptions = {
-		center: new google.maps.LatLng(Lat, Lng),
+		center: new google.maps.LatLng(CurrLat, CurrLong),
 		zoom: 15,
 		mapTypeId: 'hybrid', 
 	};
@@ -54,8 +52,8 @@ function createMap(position) {
 	});
 	
 	// changing the display of the page elements on page load
-	latDisplay.innerHTML = "<code>&emsp;" + Lat + "</code>";
-	longDisplay.innerHTML = "<code>&emsp;" + Lng + "</code>";
+	latDisplay.innerHTML = "<code>&emsp;" + CurrLat + "</code>";
+	longDisplay.innerHTML = "<code>&emsp;" + CurrLong + "</code>";
 	elevationDisplay.innerHTML = "?";
 	errDisplay.innerHTML = "<em>Click anywhere on the map to display the elevation at that point</em>";
 	
