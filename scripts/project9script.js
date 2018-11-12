@@ -180,8 +180,9 @@ function validFormField(formField) {
 //	$         end of string 
 	
 //	[a-z0-9]  allows all letters a thru z & all numbers 0 thru 9
-// [\w]		  allows alphanumeric too, just shorter
-// \-         allows hyphens (it is escaped here, its really just the hyphen)
+// [\w]		  allows alphanumeric (character set)
+// \-         allows hyphens
+// \'		  allows apostrophes
 // \s		  allows all whitespace (tabs, spacebar)
 //	+         requires at least one character to match (you'd replace this with an asterisk to allow empty strings)
 //	/i        ignore case (for the first regex im not using - textFilter1)
