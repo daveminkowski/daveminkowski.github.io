@@ -14,9 +14,9 @@
 var waitForUser;
 
 function geoTest() {
-   waitForUser = setTimeout(fail, 10000);
+   waitForUser = setTimeout(fail, 5000);
    if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(createMap, fail, {timeout: 10000});
+      navigator.geolocation.getCurrentPosition(createMap, fail, {timeout: 5000});
    } else {
       fail();
    }

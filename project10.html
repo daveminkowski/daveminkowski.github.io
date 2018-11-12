@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 10</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 10 - Map location and coordinates</h2>
+      <p><em>In your individual web site, enhance your existing page about browser security to show users their current location on a map. Note that you must specify a height and width using CSS for the element in which you display the map; these dimensions can be any size you choose. Also enhance the page to display the user's latitude, longitude, and altitude, with a label for each value.</em></p>
+      <h3 class="page-title">Your Location:</h3>
+      <p id="notify"></p>
+      <table id="mapTable">
+        <tr>
+          <td class="coordinateLabel"><code>Your Device's Latitude:</code></td>
+          <td class="coordinates" id="latitude"></td>
+        </tr>
+        <tr>
+          <td class="coordinateLabel"><code>Your Device's Longitude:</code></td>
+          <td class="coordinates" id="longitude"></td>
+        </tr>
+        <tr>
+          <td class="coordinateLabel" id="elevationLabel"><code>Elevation at map point:</code></td>
+          <td class="coordinates" id="elevation">&emsp;</td>
+        </tr>
+      </table>
+      <br>
+      <div id="map"></div>
+      <p>Rather than display the current altitude at the device location, you can move the map and click on a point to display the altitude there - I did this partially because it was just easier but mostly because my map wasn't centering on my house - it was focusing about a half mile South. The latitude/longitude are left as accurate as they've returned but the altitude has been rounded to 2 places.</p>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 10 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson101/index.htm" target="_blank">Hands-On 10.1</a> - Touch input support</p>
+        <p><a href="chapterprojects/handson102/index.htm" target="_blank">Hands-On 10.2</a> - Enhanced touch/pointer support</p>
+        <p><a href="chapterprojects/handson103/index.htm" target="_blank">Hands-On 10.3</a> - Get a user's current GPS position on a map</p>
+        <p><a href="chapterprojects/handson104/index.htm" target="_blank">Hands-On 10.4</a> - Geocoding with timeouts</p>
+        <p><a href="chapterprojects/handson105/index.htm" target="_blank">Hands-On 10.5</a> - Showing specific locations on a map</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&callback=geoTest" async defer></script> 
+<script src="scripts/chapter10script.js"></script>
+</body>
+</html>

@@ -495,6 +495,33 @@ input[type=radio] {
   transform: scale(1.4);
 }
 
+/* _________________________________________________________ Project 10 Styles _________________________________________________________ */
+
+#map {
+   min-height: 500px;
+   max-height: 100%;
+   width: 90%;
+}
+
+#map table, th, td {
+	border: none;
+	padding: 0;
+}
+
+#mapTable {
+	border: none;
+	min-width: 20%;
+	max-width: 90%;
+}
+
+.coordinates{
+	font-size: 16px;
+	color: #2589C9;
+}
+.coordinateLabel {
+	font-size: 12px;
+}
+
 /* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
 
 @media screen and (max-width: 700px) {
