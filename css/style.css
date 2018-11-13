@@ -351,12 +351,12 @@ td {
 	padding: 8px;
 }
 
-/*
-td, th {
-	width: 1%;
-	padding: 3px;
+#operators {
+    width: 10%;
+    height: 30px;
+    border-width: 3px;
+    margin: 10px 10px 10px 0px;
 }
-*/
 /* _________________________________________________________ Project 3 Styles _________________________________________________________ */
 
 /* styling for project 3 buttons																		*/
