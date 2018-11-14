@@ -49,7 +49,8 @@
       </table>
       <br>
       <div id="map"></div>
-      <p>Rather than display the current altitude at the device location, you can move the map and click on a point to display the altitude there - I did this partially because it was just easier but mostly because my map wasn't centering on my house - it was focusing about a half mile South. The latitude/longitude are left as accurate as they've returned but the altitude has been rounded to 2 places.</p>
+      <p>Rather than display the current altitude at the device location, you can move the map and click on a point to display the altitude there - I did this partially because it was just easier, partially because <code>position.coords.altitude</code> returns <em>null</em>, but mostly because my map focused about a half mile south of my actual location and was giving me the wrong elevation.</p>
+	  <p>Edit: elevation requests are being denied after uploading this to github. It's not the <code>position.coords.altitude </code>property that's being displayed, but rather a function call to a Google service that gives the elevation of a point you click on the map. It works offline.</p>
     </article>
     <aside id="sidebar">
       <div class="dark">
