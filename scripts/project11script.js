@@ -17,7 +17,7 @@ var formValidity = true;
 
 // my openweathermap.org API key (I know, I know, don't share API keys)
 var API_KEY = "&appid=75565083006a596d36acf2b201bf8219";
-var requestURL = "http://api.openweathermap.org/data/2.5/weather?zip=";
+var requestURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
 //var darkskyURL = "https://api.darksky.net/forecast/0123456789abcdef9876543210fedcba/";
 //var lat = position.coords.latitude;
 //var long = position.coords.longitude;
