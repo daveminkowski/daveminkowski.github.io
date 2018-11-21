@@ -23,8 +23,6 @@ function sendWeatherRequest(userZip) {
 	userZip = userInput.value;
 	var weatherRequest = new XMLHttpRequest();
 	var searchURL = requestURL + userZip + API_KEY;
-	getLocation();
-	//var searchURL2 = darkskyURL +  myCoords;
 	// receive data about a zip code using the endpoint given by openweather (api.openweathermap.org/data/2.5/weather?q=ZIP_CODE&appid=API_KEY);
 	weatherRequest.open('GET', searchURL);
 	
