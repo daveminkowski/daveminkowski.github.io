@@ -522,6 +522,15 @@ input[type=radio] {
 	font-size: 12px;
 }
 
+/* _________________________________________________________ Project 11 Styles _________________________________________________________ */
+
+#weatherTable {
+	border: none;
+	min-width: 20%;
+	max-width: 90%;
+}
+
+
 /* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
 
 @media screen and (max-width: 700px) {

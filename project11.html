@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 11</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 11 - Ajax requests </h2>
+      <p><em>Identify data provided by an Ajax service that you'd like to include in your personal website. You should choose a web service other than those used in the chapter and the Hands-on Projects. If you have an idea for data you'd like to access but are unsure which service might provide that data, perform a web search on a description of the data plus "API." For instance, if you were looking for a source of tide tables, you might search for "tide tables API." Use the documentation for the web service to construct an Ajax request and to display selected data from the service on your website. Note that if you don't have experience with writing PHP, you may need to examine a number of potential APIs to identify one that allows JSON-P or CORS requests, which don't require you to run a proxy.</em></p>
+      <h3 class="page-title">Weather Report by ZIP code</h3>
+      <p>Using <a href="https://openweathermap.org/api" target="_blank">Openweathermap.org's</a> API, a ZIP code can be entered into the search box and a brief report on the area weather is displayed. The JSON object returns quite a few values, but I'm using temperature, humidity, coordinates, a decription of the weather and an icon ID to represent that weather description.</p>
+	  <p>After you enter a zip code and click the button, the JSON response objects and properties will populate a field below this paragraph. The objects and their properties are accessed using their literal names (main.temp or coord.lat). Note the "weather" property is an array and its properties must be accessed as properties of an array element (weather[0].main or weather[0].icon). There's a lot of room for improvement here on the website but I actually took this API and am now working on integrating it into a smart mirror project I started a bit ago, so... a lot of my effort has been spent on that, but these are the basics that I started with. The ZIP field allows only a 5 digit zip, so you can really only use this to find weather in US cities. That's not an issue with the API though, that was my choice. The search parameter can be modified to use coordinates or city codes if you wanted. Lastly, if your request doesn't immediately populate, give it a couple seconds - it's not always instant.</p>
+      <p id="notification" style="color: red; font-weight: bold"></p>
+	  <fieldset id="JSONReport" style="visibility: hidden"></fieldset>
+      <fieldset>
+        <label for="zipCode"> Zip Code: </label>
+        <input id="zipCode" name="zipCode" style="margin: 10px" required="required">
+        <button type="button" id="submit">Search</button>
+      </fieldset>
+      <fieldset>
+        <p id="results" style="font-size: 18px; font-weight: bold">Enter a zip code...</p>
+        <table id="weatherTable" style="visibility: hidden">
+			<tr>
+            <td class="coordinateLabel">Latitude:</td>
+            <td id="latitude"></td>
+          </tr>
+			<tr>
+            <td class="coordinateLabel">Longitude:</td>
+            <td id="longitude"></td>
+          </tr>
+          <tr>
+            <td class="coordinateLabel">Current Temperature:</td>
+            <td id="currTemp"></td>
+          </tr>
+          <tr>
+            <td class="coordinateLabel">Current Humidity:</td>
+            <td id="currHumidity"></td>
+          </tr>
+          <tr>
+            <td class="coordinateLabel">Description:</td>
+            <td id="currVisibility"></td>
+          </tr>
+        </table>
+		  <p id="weatherIcon"></p> 
+      </fieldset>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 11 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson111/search.htm" target="_blank">Hands-On 11.1</a> - Bing Search </p>
+        <p><a href="chapterprojects/handson112/stocks.htm" target="_blank">Hands-On 11.2</a> - Fetching Stock Info </p>
+        <p><a href="chapterprojects/handson113/stocks.htm" target="_blank">Hands-On 11.3</a> - Enhancing the Stock App</p>
+        <p><a href="chapterprojects/handson114/address.htm" target="_blank">Hands-On 11.4</a> - Fetch City Name from ZIP </p>
+        <p><a href="chapterprojects/handson115/address.htm" target="_blank">Hands-On 11.5</a> - Foreign Postal Codes</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="scripts/project11script.js"></script>
+</body>
+</html>

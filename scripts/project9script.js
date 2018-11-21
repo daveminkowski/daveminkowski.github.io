@@ -171,7 +171,7 @@ function validEmailFormat(emailField) {
 function validFormField(formField) {
 	"use strict";
 //	var textFilter1 = /^[a-z0-9]+$/i;				// old text filter, does not allow for spaces and doesnt use handy dandy character set shortcuts like \w
-	var textFilter = /^[\w\'\-\s]+$/;
+	var textFilter = /^(?=(\D*\d){5}\D*$)/;
 	
 // regex legend
 
