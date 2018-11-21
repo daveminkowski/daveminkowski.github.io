@@ -5,7 +5,6 @@ var userInput = document.getElementById("zipCode");
 var results = document.getElementById("results");
 var weatherIcon = document.getElementById("weatherIcon");
 var weatherTable = document.getElementById("weatherTable");
-
 var latitude = document.getElementById("latitude");
 var longitude = document.getElementById("longitude");
 var currTemp = document.getElementById("currTemp");
@@ -18,9 +17,6 @@ var formValidity = true;
 // my openweathermap.org API key (I know, I know, don't share API keys)
 var API_KEY = "&appid=75565083006a596d36acf2b201bf8219";
 var requestURL = "https://api.openweathermap.org/data/2.5/weather?zip=";
-//var darkskyURL = "https://api.darksky.net/forecast/0123456789abcdef9876543210fedcba/";
-//var lat = position.coords.latitude;
-//var long = position.coords.longitude;
 
 function sendWeatherRequest(userZip) {
 	"use strict";
@@ -66,27 +62,12 @@ function sendWeatherRequest(userZip) {
 	currVisibility.innerHTML = "&emsp;" + myVisibility;	
 	currVisibility.style="visibility: visible";
 	weatherIcon.innerHTML = weatherIconURL;
-		
 	};
 	// send the request
 	weatherRequest.send();
 }
 
-function getLocation() {
-	"use strict";
-    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(showPosition);
-    } else { 
-        notification.innerHTML = "Geolocation is not supported by this browser.";
-    }
-}
-
-function showPosition(position) {
-	"use strict";
-    notification.innerHTML = "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
-}
-
+// converts temp value returned from kelvin to fahrenheit
 function convertKtoF(value) {
 	"use strict";
 	var fTemp = "";
