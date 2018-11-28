@@ -1,0 +1,161 @@
+<!doctype html>
+<html>
+<head>
+<title>Project 12</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <article id="mainarticle">
+      <h2 class="page-title">Project 12 - CSS Manipulation with jQuery </h2>
+      <p><em>In your individual website, revise a function to use jQuery selectors and methods. Identify a function that contains at least three selectors that you can replace with jQuery selectors, and that performs at least one DOM traversal or CSS change that you can replace with a jQuery method. Comment out the code you replace rather than deleting it. Be sure to link to the jQuery library in all HTML documents that link to the .js file you've updated. When your revisions are done, test all pages that use the function to ensure they still perform as they did when the function was written in plain JavaScript.</em></p>
+      <h3 class="page-title">Simple jQuery Menus</h3>
+      <p>Pretty straightforward: using jQuery and Google's CDN, a few simple menus are shown and hidden on mouseover. Not as smooth as I'd like but seems to be working. I think it'll feel better once the conference logos and submenus are cut to about half their current width and displayed side by side rather than stacked on each other like they are now. That way, the NFC division menus don't push the AFC conference selector down, stopping that annoying bouncing effect on the menu.</p>
+      <div id="nfc">
+        <nav>
+<!--		Currently the division and conference items are classed separately because I'm playing with certain effects and trying to get menus to slide out sideways.
+			Both menus could be named divisionMenu or conferenceMenu and retain the current functionality. -->
+          <ul class="conferenceMenu">
+            <li>
+              <div class="banner"> <a href="https://www.nfl.com/standings" target="_blank"><img src="images/nfcbanner.jpg" style="width: 100%; height: 100%" alt="nfcbanner"></a> </div>
+              <ul class="divisionMenu">
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/NFC_North"  target="_blank">NFC North</a></p>
+                  <ul>
+<!--		Also, the team li elements each have a unique id because I was going to use a loop to provide the addresses as strings for each element
+			and maybe show a team logo or something but I ended up not doing anything with that because the NFL is not friendly with their API --> 
+                    <li id="gb"><a href="http://www.nfl.com/teams/profile?team=GB" target="_blank">Green Bay Packers</a></li>
+                    <li id="chi"><a href="http://www.nfl.com/teams/profile?team=CHI" target="_blank">Chicago Bears</a></li>
+                    <li id="min"><a href="http://www.nfl.com/teams/profile?team=MIN" target="_blank">Minnesota Vikings</a></li>
+                    <li id="det"><a href="http://www.nfl.com/teams/profile?team=DET" target="_blank">Detroit Lions</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/NFC_South"  target="_blank">NFC South</a></p>
+                  <ul>
+                    <li id="atl"><a href="http://www.nfl.com/teams/profile?team=ATL" target="_blank">Atlanta Falcons</a></li>
+                    <li id="car"><a href="http://www.nfl.com/teams/profile?team=CAR" target="_blank">Carolina Panthers</a></li>
+                    <li id="no"><a href="http://www.nfl.com/teams/profile?team=NO" target="_blank">New Orleans Saints</a></li>
+                    <li id="tb"><a href="http://www.nfl.com/teams/profile?team=TB" target="_blank">Tampa Bay Buccaneers</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/NFC_East"  target="_blank">NFC East</a></p>
+                  <ul>
+                    <li id="dal"><a href="http://www.nfl.com/teams/profile?team=DAL" target="_blank">Dallas Cowboys</a></li>
+                    <li id="nyg"><a href="http://www.nfl.com/teams/profile?team=NYG" target="_blank">New York Giants</a></li>
+                    <li id="phi"><a href="http://www.nfl.com/teams/profile?team=PHI" target="_blank">Philadelphia Eagles</a></li>
+                    <li id="was"><a href="http://www.nfl.com/teams/profile?team=WAS" target="_blank">Washington Redskins</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/NFC_West"  target="_blank">NFC West</a></p>
+                  <ul>
+                    <li id="ari"><a href="http://www.nfl.com/teams/profile?team=ARI" target="_blank">Arizona Cardinals</a></li>
+                    <li id="la"><a href="http://www.nfl.com/teams/profile?team=LA" target="_blank">Los Angeles Rams</a></li>
+                    <li id="sf"><a href="http://www.nfl.com/teams/profile?team=SF" target="_blank">San Francisco 49ers</a></li>
+                    <li id="sea"><a href="http://www.nfl.com/teams/profile?team=SEA" target="_blank">Seattle Seahawks</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div id="afc">
+        <nav>
+          <ul class="conferenceMenu">
+            <li>
+              <div class="banner"> <a href="https://www.nfl.com/standings" target="_blank"><img src="images/afcbanner.jpg" style="width: 100%; height: 100%" alt="afcbanner"></a> </div>
+              <ul class="divisionMenu">
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/AFC_North"  target="_blank">AFC North</a></p>
+                  <ul>
+                    <li id="bal"><a href="http://www.nfl.com/teams/profile?team=BAL" target="_blank">Baltimore Ravens</a></li>
+                    <li id="cin"><a href="http://www.nfl.com/teams/profile?team=CIN" target="_blank">Cincinnati Bengals</a></li>
+                    <li id="cle"><a href="http://www.nfl.com/teams/profile?team=CLE" target="_blank">Cleveland Browns</a></li>
+                    <li id="pit"><a href="http://www.nfl.com/teams/profile?team=PIT" target="_blank">Pittsburgh Steelers</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/AFC_South"  target="_blank">AFC South</a></p>
+                  <ul>
+                    <li id="hou"><a href="http://www.nfl.com/teams/profile?team=HOU" target="_blank">Houston Texans</a></li>
+                    <li id="ind"><a href="http://www.nfl.com/teams/profile?team=IND" target="_blank">Indianapolis Colts</a></li>
+                    <li id="jax"><a href="http://www.nfl.com/teams/profile?team=JAX" target="_blank">Jacksonville Jaguars</a></li>
+                    <li id="ten"><a href="http://www.nfl.com/teams/profile?team=TEN" target="_blank">Tennessee Titans</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/AFC_East"  target="_blank">AFC East</a></p>
+                  <ul>
+                    <li id="buf"><a href="http://www.nfl.com/teams/profile?team=BUF" target="_blank">Buffalo Bills</a></li>
+                    <li id="mia"><a href="http://www.nfl.com/teams/profile?team=MIA" target="_blank">Miami Dolphins</a></li>
+                    <li id="ne"><a href="http://www.nfl.com/teams/profile?team=NE" target="_blank">New England Patriots</a></li>
+                    <li id="nyj"><a href="http://www.nfl.com/teams/profile?team=NYJ" target="_blank">New York Jets</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <p><a href="https://en.wikipedia.org/wiki/AFC_West"  target="_blank">AFC West</a></p>
+                  <ul>
+                    <li id="den"><a href="http://www.nfl.com/teams/profile?team=DEN" target="_blank">Denver Broncos</a></li>
+                    <li id="kc"><a href="http://www.nfl.com/teams/profile?team=KC" target="_blank">Kansas City Chiefs</a></li>
+                    <li id="lac"><a href="http://www.nfl.com/teams/profile?team=LAC" target="_blank">Los Angeles Chargers</a></li>
+                    <li id="oak"><a href="http://www.nfl.com/teams/profile?team=OAK" target="_blank">Oakland Raiders</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </article>
+    <aside id="sidebar">
+      <div class="dark">
+        <h3>Chapter 12 Hands-On Projects:</h3>
+        <p><a href="chapterprojects/handson121/index.htm" target="_blank">Hands-On 12.1</a> - Display lists on click</p>
+        <p><a href="chapterprojects/handson122/index.htm" target="_blank">Hands-On 12.2</a> - Convert pounds to kilograms</p>
+        <p><a href="chapterprojects/handson123/index.htm" target="_blank">Hands-On 12.3</a> - Form validation with jQuery</p>
+        <p><a href="chapterprojects/handson124/index.htm" target="_blank">Hands-On 12.4</a> - Event listener with jQuery</p>
+        <p><a href="chapterprojects/handson125/index.htm" target="_blank">Hands-On 12.5</a> - Linking jQuery with a (Google) CDN</p>
+      </div>
+    </aside>
+  </div>
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> 
+<script src="scripts/project12script.js"></script>
+</body>
+</html>

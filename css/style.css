@@ -530,6 +530,137 @@ input[type=radio] {
 	max-width: 90%;
 }
 
+/* _________________________________________________________ Project 12 Styles _________________________________________________________ */
+
+.banner img {
+	display:inline-block;
+	float: left;
+	border: 1px solid black;
+}
+
+/* ________________________________________________________________ NFC ________________________________________________________________ */
+
+/*
+
+UL/LI hierarchy:
+
+-nav
+	CONFERENCE
+	- ul
+		ALL DIVISIONS WITHIN CONFERENCE
+		-li: a single ul containing:
+
+				DIVISION NAMES
+				-ul
+					TEAMS IN A DIVISION
+					-ul
+						TEAM NAMES
+						-li
+						-li
+						-li
+						-li
+
+Conference Level: 	nav ul li
+Division Level: 	nav ul ul li
+Team Level: 		nav ul ul ul li
+
+*/
+
+#nfc a, #afc a {
+	color: white;
+}
+
+#nfc nav, #afc nav {
+   float: left;
+   font-size: 14px;
+   width: 100%;
+   height: 100%;
+   text-align: center;
+}
+
+#nfc nav ul, #afc nav ul {
+   width: 100%;
+}
+
+/* properties for division menu blocks */
+#nfc nav ul ul li, #afc nav ul ul li {
+   width: 25%;
+   display: block;
+   float: left;
+   color: white;
+   border: 1px solid black;
+}
+
+/* background color for division menu blocks ------- NFC*/
+#afc nav ul ul li {
+   background: #ED1717;
+}
+/* background color for division menu blocks ------- AFC*/
+#nfc nav ul ul li {
+   background: #013369;
+}
+
+
+/* make the division name and team text fill more of the box to be clicked as a link */
+#nfc nav ul ul li a, #afc nav ul ul li a{
+   display: block;
+}
+
+#nfc nav ul ul li p, #afc nav ul ul li p {
+   line-height: 45px;
+   font-size: 1.4em;
+}
+
+/* background, positioning and visibility of division and team items ------- NFC*/
+#nfc nav ul ul ul, #nfc nav ul ul {
+   position: relative;
+   z-index: 10;
+   display: none;
+   background: #013369;
+}
+/* background, positioning and visibility of division and team items ------- AFC*/
+#afc nav ul ul ul, #afc nav ul ul {
+   position: relative;
+   z-index: 10;
+   display: none;
+   background: #ED1717;
+}
+
+#nfc nav ul ul ul li, #afc nav ul ul ul li {
+   clear: left;
+   text-align: left;
+   line-height: normal;
+   height: auto;
+   padding: 0.4em;
+   width: 100%;
+}
+
+/* hover colors for the division and team menu items ------- NFC*/
+#nfc nav ul ul li:hover, #nfc nav ul ul ul li a:hover {
+   color: #013369;
+   background: white;
+}
+
+/* hover colors for the division and team menu items ------- AFC*/
+#afc nav ul ul li:hover, #afc nav ul ul ul li a:hover {
+   color: #ED1717;
+   background: white;
+}
+
+/* text color within each menu item */
+#nfc nav ul ul li:hover a, #afc nav ul ul li:hover a {
+	color: inherit;
+}
+
+#nfc div.container, #afc div.container {
+   background: none;
+}
+
+#nfc div.container:after, #afc div.container:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 /* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
 
