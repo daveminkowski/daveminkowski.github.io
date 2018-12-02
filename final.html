@@ -56,14 +56,14 @@
 	  </code></pre>
     </div>
     <ol>
-      <li>In the code above, we've assigned a value of 10 to the variable <code><strong>someNumber</strong></code>. We could've assigned that value through any number of ways such as a text field, a selector or a radio menu, but that doesn't matter right now - plus I'll do a small bit of that later. What's important is that the variable has a value of 10.
+      <li>In the code above, we've assigned a value of 10 to the variable <code><strong>someNumber</strong></code>. We could've assigned that value through any number of ways such as a text field, a selector or a radio menu, but that doesn't matter right now - plus I'll do a small bit of that later. What's important is that the variable has a value of 10:
         <div class="codeSnip">
           <p>
           <pre><code>var someNumber = 10;</code></pre>
           </p>
         </div>
       </li>
-      <li>The <code><strong>addFiveFunction</strong></code> function is then called, and the <code><strong>someNumber</strong></code> variable is given as a parameter of the function (if it's in parentheses, it's a parameter of the function).
+      <li>The <code><strong>addFiveFunction</strong></code> function is then called, and the <code><strong>someNumber</strong></code> variable is given as a parameter of the function (if it's in parentheses, it's a parameter of the function):
         <div class="codeSnip">
           <p>
           <pre><code>addFiveFunction(someNumber);</code></pre>
@@ -76,26 +76,27 @@
           <pre><code>function addFiveFunction(anyNumber) {</code></pre>
           </p>
         </div>
-        <p>The <code><strong>anyNumber</strong></code> portion of this definition is not asking for a variable named <code><strong>anyNumber</strong></code>. This is a definition of a variable to be used in the function below this definition (within the curly braces). Basically, you're taking the value of <code><strong>someNumber</strong></code> and using it in the function called in step 2. To do this, the variable is assigned its own name (<code><strong>anyNumber</strong></code>) and memory space so it doesn't change the value of the original variable.</p>
-        <p>Distilled down:
+        <p>The <code><strong>anyNumber</strong></code> portion of this definition is not asking for a variable named <code><strong>anyNumber</strong></code>. This is a definition of a variable to be used in the function below this definition (within the curly braces). Basically, you're taking the value of <code><strong>someNumber</strong></code> and using it in the function called in step 2. To do this, the variable is assigned its own name (<code><strong>anyNumber</strong></code>) and memory space so it doesn't change the value of the original variable. <span style=" color: indianred"><strong>This process is how we pass parameters.</strong></span>
+		</p><p style="color: grey"><em>(Note: renaming the passed parameter is not necessary, I do this to illustrate which variable/parameter was sent from the original function call and how the method is using that parameter). </em></p>
+        <p>Distilled down, this function call:
         
         <div class="codeSnip">
           <p>
           <pre><code>addFiveFunction(someNumber);</code></pre>
           </p>
         </div>
-        Says: "call the function <code><strong>addFiveFunction</strong></code> using the value of <code><strong>someNumber</strong></code>."
+        Says: "call the <code><strong>addFiveFunction</strong></code> function  using the value of <code><strong>someNumber</strong></code>."
         </p>
-        <p>To which the function </p>
+		<p>To which the <code><strong>addFiveFunction</strong></code> function here: </p>
         <div class="codeSnip">
           <p>
           <pre><code>function addFiveFunction(anyNumber) {</code></pre>
           </p>
-        </div>
-        <p>Responds with: "Sure, I'll answer your call and use your <code><strong>someNumber</strong></code> value, but I'm going to call it <code><strong>anyNumber</strong></code> regardless of what you named it.... </p>
+</div>
+		<p>responds with: "Sure, I'll answer your call and use your <code><strong>someNumber</strong></code> value, but I'm going to call it <code><strong>anyNumber</strong></code> regardless of what you named it.</p>
         <p style="color: grey"><em>Anecdote time: I had a friend explain this whole concept to me once. Let's say I walk up to Filibertos and ask for a steak burrito instead of a carne asada because I don't wanna butcher my rolled R's and embarrass myself. After rolling  her eyes at me, the gal at the window turns around and yells, "CARNE ASADA BURRO!" I'm getting what I want - she didn't change my burrito from steak to chicken. She translated what she knew I wanted and used it to tell the guy in the back to make this idiot his steak burrito. Now that I'm telling this story to a crowd who might understand it, I don't even know if this analogy is correct... but I'm gonna leave it in here because it's kinda funny that THAT's how this clicked for me.</em> </p>
       </li>
-      <li>What's left is the basic math performed in the function. We've defined a variable <code><strong>answer</strong></code> and assigned it the value of 5 + the value of <code><strong>anyNumber</strong></code>, which we determined in step 3 was actually just the value of <code><strong>someNumber</strong></code>.
+      <li>The only part left is the basic math performed in the function. We've defined a variable <code><strong>answer</strong></code> and assigned it the value of 5 + the value of <code><strong>anyNumber</strong></code>, which we determined in step 3 was actually just the value of <code><strong>someNumber</strong></code> that was passed into the function when it was called:
         <div class="codeSnip">
           <p>
           <pre><code>var answer = 5 + anyNumber;</code></pre>
@@ -116,7 +117,7 @@
     
     <h3 class="page-title">Ok, but why would I need to do this?</h3>
     <p>I'd argue the most significant reason is flexibility (or perhaps, efficiency, depending on how you're looking at it). Passing objects and parameters allows us to manipulate all or part of (some data) and reuse it elsewhere. It helps us to write code that's easy to work through and troubleshoot because we can create specific methods that perform specific jobs and pass data between those methods.</p>
-    <p>In a real life practical application, we might not have a function that adds a preset number (5) to another preset number (10), so the first example is more demonstrative than anything. However, consider an e-commerce website or a point-of-sale terminal that calculates a subtotal and tax. Depending on on where in the world you are and how much you spend, each of those values will change between transactions and the function has to be able to calculate variable values. Take a look at the form below. <span style=" color: indianred"><strong>Enter any numeric value in the <strong>Subtotal</strong> box then click the calculate button.</strong></span> The grand total (after adding a 7.8% sales tax) is displayed:</p>
+    <p>In a real life practical application, we might not have a function that adds a preset number (5) to another preset number (10), so the first example is more demonstrative than anything. However, consider an e-commerce website or a point-of-sale terminal that calculates a subtotal and tax. Depending on on where in the world you are and how much you spend, each of those values will change between transactions and the function has to be able to calculate variable values. Take a look at the form below. <span style=" color: indianred"><strong>Enter any numeric value in the <strong>Subtotal</strong> box then click the calculate button.</strong></span> The grand total is displayed after calculating the tax rate:</p>
     <form style="width: 50%">
       <fieldset>
         <label for="subTotal"> <strong>Subtotal:</strong> </label>
@@ -136,7 +137,7 @@
 	var taxRate = 1.078;
 	var subTotalField = document.getElementById("subTotal");
 	var grandTotalField = document.getElementById("grandTotal");
-	var invalidSubTotalError = "Please enter a valid amount -  up to 2 decimal places.";
+	var invalidSubTotalError = "Please enter a valid amount with a maximum of 2 decimal places.";
 	  
 	function displayTotal() {
 		var subTotalValue = subTotalField.value;
@@ -152,10 +153,10 @@
 		return grandTotal;
 	}
 	
-	function validNumField(formField) {
-		var filter = /^[0-9]+$/i;
+	function validNumField(formFieldValue) {
+		var filter = /^[0-9]+(\.[0-9]{1,2})?$/;
 
-		if (filter.test(formField)) {
+		if (filter.test(formFieldValue)) {
 			return true;
 		} else {
 			return false;
@@ -183,13 +184,19 @@
       </li>
     </ol>
     <p>In the first line, the <code>if</code> statement passes the <strong><code>subTotalValue</code></strong> value to the <strong><code>validNumField()</code></strong> function. This checks to ensure the value is a numeric value and has no more than 2 digits after the decimal point. The second line shows what happens when the <strong><code>alert()</code></strong> function is triggered. If the value does not meet the criteria of the <strong><code>validNumField()</code></strong> function, an alert window pops up displaying the <strong><code>invalidSubTotalError</code></strong> string that was passed as a parameter of the built-in <strong><code>alert()</code></strong> function of Javascript.</p>
-    <p>Moving on to the <code>else</code> portion of the statement, we pass a third item - this time, we pass a parameter to a function that will retrieve the desired output directly:</p>
+	<p>Within the <strong><code>validNumField()</code></strong> function, we pass the <strong><code>formFieldValue</code></strong> value into another built-in Javascript function named <strong><code>test()</code></strong>, which does the heavy lifting for the <strong><code>validNumField()</code></strong> function by matching the input from the user against the text filter appropriately named <strong><code>filter</code></strong>:</p>
+	<div class="codeSnip">
+      <p>
+      <pre><code>if (filter.test(formFieldValue)) {</code></pre>
+      </p>
+    </div>
+    <p>Moving on to the <code>else</code> portion of the <strong><code>displayTotal()</code></strong> function, we pass a fourth item - this time, we're setting a variable value that calls a function which will retrieve the desired output indirectly. It does this by calling a separate function to perform the calculation and return the answer:</p>
     <div class="codeSnip">
       <p>
       <pre><code>grandTotalField.value = "$" + calcTax(subTotalValue);</code></pre>
       </p>
     </div>
-    <p>In the snippet of code above, we're attempting to make the <strong><code>grandTotalField</code></strong> display a dollar sign immediately followed by whatever value is returned from the <strong><code>calcTax()</code></strong> function, using the <strong><code>subTotalValue</code></strong> value as a parameter of that function. Similar to the first example of the tutorial with the <strong><code>addFiveFunction()</code></strong>, the <strong><code>calcTax()</code></strong> function expects a variable to be passed to it so it can use it in its own calculation:</p>
+    <p>In the snippet of code above, we're attempting to make the <strong><code>grandTotalField</code></strong> display a dollar sign immediately followed by whatever value is returned from the <strong><code>calcTax()</code></strong> function, using the <strong><code>subTotalValue</code></strong> value as a parameter of that function. Similar to the first example of the tutorial with the <strong><code>addFiveFunction()</code></strong>, the <strong><code>calcTax()</code></strong> function expects a variable to be passed to it so it can be used in its own private calculation:</p>
     <div class="codeSnip">
       <p>
       <pre><code>function calcTax(subtotal) {
@@ -198,7 +205,7 @@
 	}</code></pre>
       </p>
     </div>
-    <p>The <strong><code>calcTax()</code></strong> function renames this passed variable value to <strong><code>subtotal</code></strong>, then declares a new variable named <strong><code>grandTotal</code></strong>. <em>(Note: renaming the passed parameter is not necessary, I do this to illustrate which variable/parameter was sent from the original function call and how the method is using that parameter). </em> The value of the new variable is set to the rounded product of <strong><code>subtotal</code></strong> (the original value passed) and <strong><code>taxRate</code></strong>, the global variable we declared in the first line of the example code. Finally, the function returns the value of <strong><code>grandTotal</code></strong> to the original location it was called:</p>
+    <p>The <strong><code>calcTax()</code></strong> function renames this passed variable value to <strong><code>subtotal</code></strong>, then declares a new variable named <strong><code>grandTotal</code></strong>. The value of the new variable is set to the rounded product of <strong><code>subtotal</code></strong> (the original value passed) and <strong><code>taxRate</code></strong>, the global variable we declared in the first line of the example code. Finally, the function returns the value of <strong><code>grandTotal</code></strong> to the original location it was called:</p>
     <div class="codeSnip">
       <p>
       <pre><code>grandTotalField.value = "$" + calcTax(subTotalValue);}</code></pre>

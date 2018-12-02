@@ -16,7 +16,7 @@ var calcButton = document.getElementById("calculateTotal");
 var grandTotalField = document.getElementById("grandTotal");
 var subTotalField = document.getElementById("subTotal");
 var taxRate = 1.078;
-var invalidSubTotalError = "Please enter a valid amount -  up to 2 decimal places.";
+var invalidSubTotalError = "Please enter a valid amount with a maximum of 2 decimal places.";
 
 function displayTotal() {
 	"use strict";
@@ -39,12 +39,11 @@ function calcTax(subtotal) {
 	return grandTotal;
 }
 
-function validNumField(formField) {
+function validNumField(formFieldValue) {
 	"use strict";
 	var filter = /^[0-9]+(\.[0-9]{1,2})?$/;
-	//var filter2 = /^[0-9]+$/i;
 
-	if (filter.test(formField)) {
+	if (filter.test(formFieldValue)) {
 		return true;
 	} else {
 		return false;
