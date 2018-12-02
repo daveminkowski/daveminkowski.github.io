@@ -60,6 +60,10 @@ ul {
 	transition: background 500ms ease;
 	display: inline-block;
 }
+
+.blueroundedbutton:focus {
+  	outline: none;
+}
 /* main page button hover */
 .blueroundedbutton:hover {
 	background-color: #2589C9;
@@ -150,11 +154,18 @@ ul {
 	margin-top: 90px;
 	display: inline-block;
 }
+.finalbox .box {
+	max-width: 80%;
+	display: inline-block;
+	padding: 0;
+	margin: 0;
+	margin-top: -5%;
+}
 .notopmarginboxes .box {
 	margin-top: 0px;
 }
 /* images within the boxes */
-.myboxes .box img, .projectboxes .box img {
+.myboxes .box img, .projectboxes .box img, .finalbox .box img {
 	border: 4px #000000 solid;
 }
 /* hover over a home page image */
@@ -163,7 +174,7 @@ ul {
 	border-color: #ffffff;
 }
 /* image hover border color for projects.html*/
-.projectboxes .box img:hover {
+.projectboxes .box img:hover, .finalbox .box img:hover {
 	border-color: #2589C9;
 }
 /* Clear floats after the columns */
@@ -661,6 +672,20 @@ Team Level: 		nav ul ul ul li
   display: table;
   clear: both;
 }
+
+/* _________________________________________________________ Final Project Styles _________________________________________________________ */
+
+.codeBlock {
+	width: 100%;
+}
+
+.codeSnip {
+	width: 40%;
+	float: none;
+}
+
+
+
 
 /* _________________________________________________________ Responsive/Alternate Viewport Styling _________________________________________________________ */
 

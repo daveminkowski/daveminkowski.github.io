@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<title>JS Tutorial Project</title>
+<meta charset="utf-8">
+<meta name = "viewport" content="width=device-width">
+<meta name = "Description" content="A project website by Dave Minkowski">
+<meta name = "Author" content="Dave Minkowski">
+<link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed" rel="stylesheet">
+<script src="scripts/modernizr.custom.65897.js"></script>
+<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/an-old-hope.min.css">
+</head>
+
+<body>
+<header>
+  <div class="container">
+    <h1>Dave <span class="highlight">M</span>inkowski</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li class="current"><a href="projects.html">Projects</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+<section id="main">
+  <div class="container">
+    <h2 class="page-title">Final Project - Javascript Tutorial </h2>
+    <p><em>Your final assignment is to turn the tables and teach others what you've learned about JavaScript. Pick a favorite JavaScript topic and present a lesson using a page or series of web pages that fully teaches someone who may be interested in learning about that topic, and create a mini website for your tutorial. You must make use of JavaScript code snippets to provide valid examples of proper syntax. </em></p>
+    <h3 class="page-title">Passing Parameters to Functions</h3>
+    <p>First things first: I'm approaching this lesson with the understanding that the reader has some basic familiarity with html, css and javascript elements. This tutorial doesn't require any ADVANCED knowledge but I feel like the assignment will be long enough without having to go through setting up a webpage and creating a script. JUST in case, help with site and script creation can be found from <a href="https://developer.mozilla.org/en-US/docs/Learn/Getting_started_with_the_web/JavaScript_basics" target="_blank">Mozilla</a> using these <a href="https://github.com/mdn/beginner-html-site-styled/archive/gh-pages.zip">startup files.</a></p>
+    <p>My tutorial covers the basic concepts of passing parameters to functions. Entering this class as a programming student (Using primarily Java, Python and C#) with no prior experience with Javascript, I thought I'd cover a topic that's relevant to Javascript as well as the other languages I've studied. I chose this topic specifically because it took me quite a while to understand when I was first introduced to programming. I don't really know why it took so long to wrap my head around the concept of passing parameters, but once it "clicked", it made a number of things significantly easier. As a happy side effect, it foced me to me think about the functions or methods I was writing (or planning to write), knowing that I might be able to reuse a method that could perform an operation on a different parameter (or object!) without having to rewrite that block of code.<br>
+      <br>
+      Javascript makes use of functions that accept parameters to act on, just as Java, Python, C# or any other object-oriented programming language does. Some key differences with Javascript are variable declarations and how we pass parameters. JS is smart enough to determine the variable type, and there's no need to declare an integer, string or decimal type, which is nice. Additionally, JS parameters are only passed by value (rather than by reference, but I won't be going into that). Passing parameters is one of the slickest concepts of programming that I've learned so far. There's something about writing a function that I've used multiple times for multiple parameters (but only wrote once) that does amazing things for my ego, so this is the backbone of my tutorial. Hopefully by the time you've finished reading, everything I've said up until now will make sense.</p>
+    <p style = "border-bottom: 2px solid black;"></p>
+    
+    <!---------------------------------------------------    Part One    ------------------------------------------------->
+    
+    <h3 class="page-title">What do you mean, passing parameters?</h3>
+    <p>When passing a parameter or object, you're handing the function a variable that will be used in whatever instructions have been written to the function. For example, let's say we have a function that accepts any number and adds 5 to it. It might look something like this:</p>
+    <div class="codeBlock">
+      <pre><code>
+	  var someNumber = 10;
+	  addFiveFunction(someNumber);
+	  
+	  function addFiveFunction(anyNumber) {
+		var answer = 5 + anyNumber;
+		console.log("The result of the function is " + answer + ".");
+		}
+		
+	  // Value of the calculation is 15;
+	  </code></pre>
+    </div>
+    <ol>
+      <li>In the code above, we've assigned a value of 10 to the variable <code><strong>someNumber</strong></code>. We could've assigned that value through any number of ways such as a text field, a selector or a radio menu, but that doesn't matter right now - plus I'll do a small bit of that later. What's important is that the variable has a value of 10.
+        <div class="codeSnip">
+          <p>
+          <pre><code>var someNumber = 10;</code></pre>
+          </p>
+        </div>
+      </li>
+      <li>The <code><strong>addFiveFunction</strong></code> function is then called, and the <code><strong>someNumber</strong></code> variable is given as a parameter of the function (if it's in parentheses, it's a parameter of the function).
+        <div class="codeSnip">
+          <p>
+          <pre><code>addFiveFunction(someNumber);</code></pre>
+          </p>
+        </div>
+      </li>
+      <li>This is the first part of this whole concept that tripped me up at first. Now we have the function definition:
+        <div class="codeSnip">
+          <p>
+          <pre><code>function addFiveFunction(anyNumber) {</code></pre>
+          </p>
+        </div>
+        <p>The <code><strong>anyNumber</strong></code> portion of this definition is not asking for a variable named <code><strong>anyNumber</strong></code>. This is a definition of a variable to be used in the function below this definition (within the curly braces). Basically, you're taking the value of <code><strong>someNumber</strong></code> and using it in the function called in step 2. To do this, the variable is assigned its own name (<code><strong>anyNumber</strong></code>) and memory space so it doesn't change the value of the original variable.</p>
+        <p>Distilled down:
+        
+        <div class="codeSnip">
+          <p>
+          <pre><code>addFiveFunction(someNumber);</code></pre>
+          </p>
+        </div>
+        Says: "call the function <code><strong>addFiveFunction</strong></code> using the value of <code><strong>someNumber</strong></code>."
+        </p>
+        <p>To which the function </p>
+        <div class="codeSnip">
+          <p>
+          <pre><code>function addFiveFunction(anyNumber) {</code></pre>
+          </p>
+        </div>
+        <p>Responds with: "Sure, I'll answer your call and use your <code><strong>someNumber</strong></code> value, but I'm going to call it <code><strong>anyNumber</strong></code> regardless of what you named it.... </p>
+        <p style="color: grey"><em>Anecdote time: I had a friend explain this whole concept to me once. Let's say I walk up to Filibertos and ask for a steak burrito instead of a carne asada because I don't wanna butcher my rolled R's and embarass myself. After rolling  her eyes at me, the gal at the window turns around and yells "CARNE ASADA BURRO!" I'm getting what I want, she didn't change my burrito from steak to chicken, she just translated what she knew I wanted and used it to tell the guy in the back to make this idiot his steak burrito. Now that I'm telling this story to a crowd who might understand it, I don't even know if this analogy is correct... but I'm gonna leave it in here because it's kinda funny that THAT's how this clicked for me.</em> </p>
+      </li>
+      <li>What's left is the basic math performed in the function. We've defined a variable <code><strong>answer</strong></code> and assigned it the value of 5 + the value of <code><strong>anyNumber</strong></code>, which we determined in step 3 was actually just the value of <code><strong>someNumber</strong></code>.
+        <div class="codeSnip">
+          <p>
+          <pre><code>var answer = 5 + anyNumber;</code></pre>
+          </p>
+        </div>
+      </li>
+      <li>Obviously, 10 + 5 = 15, and if you were to write this function into your script file and open the debugging console, it would output the message <em>"The result of the function is 15."</em> In fact, you can open the console and see that it does exactly that - I have that portion of the script running on this page.
+        <div class="codeSnip">
+          <p>
+          <pre><code>console.log("The result of the function is " + answer + ".");</code></pre>
+          </p>
+        </div>
+      </li>
+    </ol>
+    <p style = "border-bottom: 2px solid black;"></p>
+    
+    <!---------------------------------------------------    Part Two    ------------------------------------------------->
+    
+    <h3 class="page-title">Ok, but why would I need to do this?</h3>
+    <p>I'd argue the most significant reason is flexibility (or perhaps, efficiency, depending on how you're looking at it). Passing objects and parameters allows us to manipulate all or part of (some data) and reuse it elsewhere. It helps us to write code that's easy to work through and troubleshoot because we can create specific methods that perform specific jobs and pass data between those methods.</p>
+    <p>In a real life practical application, we might not have a function that adds a preset number (5) to another preset number (10), so the first example is more demonstrative than anything. However, consider an e-commerce website or a point-of-sale terminal that calculates a subtotal and tax. Depending on where you are in the world you are and how much you spend, each of those values will change between transactions and the function has to be able to calculate variable values. Take a look at the form below. <span style=" color: indianred"><strong>Enter any numeric value in the <strong>Subtotal</strong> box then click the calculate button.</strong></span> The grand total (after adding a 7.8% sales tax) is displayed:</p>
+    <form style="width: 50%">
+      <fieldset>
+        <label for="subTotal"> <strong>Subtotal:</strong> </label>
+        <input type="text" id="subTotal" />
+        <label for="grandTotal"> <strong>Total after 7.8% tax:</strong> </label>
+        <input type="text" id="grandTotal" disabled="disabled" value="$"/>
+        <p>
+        <p></p>
+        </p>
+        <button class="blueroundedbutton" type="button" id="calculateTotal">Calculate Total After Tax</button>
+      </fieldset>
+    </form>
+    <p></p>
+    <p>Sifting through the code below, we can see the variables and functions involved with making our tax calculation. We could make one big function to handle every step in this calculation, but having separate functions that perform their own tasks helps with identifying problem areas within the code - if some part of the program doesn't work, this can help to easily identify where the conflict might be hiding. It also operates on a programming concept called encapsulation, or information-hiding. The user really only interacts with one of the functions, but that function might call another function which may call yet another function, and so on. Writing code in this way gets us into the practice of hiding information that doesn't need to readily available to each part of our program or script. Passing variables and functions between the inaccessible portions of our code is mandatory for effective encapsulation. Anyway, take a look:</p>
+    <div class="codeBlock">
+      <pre><code>	
+	var subTotalField = document.getElementById("subTotal");
+	var grandTotalField = document.getElementById("grandTotal");
+	var taxRate = 1.078;
+	var invalidSubTotalError = "Please enter a valid amount -  up to 2 decimal places.";
+	  
+	function displayTotal() {
+		var subTotalValue = subTotalField.value;
+			if (!subTotalValue || !validNumField(subTotalValue)){
+				alert (invalidSubTotalError);
+			} else {
+				grandTotalField.value = "$" + calcTax(subTotalValue);
+			}
+	}
+	
+	function calcTax(subtotal) {
+		var grandTotal = (subtotal * taxRate).toFixed(2);
+		return grandTotal;
+	}
+	
+	function validNumField(formField) {
+		var filter = /^[0-9]+$/i;
+
+		if (filter.test(formField)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+	  </code></pre>
+    </div>
+    <p>We have some variable definitions for specific page elements, a variable for the tax rate multiplier, an error message, and a few functions. There's an event listener function for the button, but that isn't listed, but it's important to note that the calculate button calls the <strong><code>displayTotal()</code></strong> function.</p>
+    <p>I hid some of the styling code in the <code>if/else</code> statement in the <strong><code>displayTotal()</code></strong> function, as it's relevant only to the error handling for that function and isn't specifically necessary for this tutorial. We really only care about these two lines for now:</p>
+    <ol>
+      <li>
+        <div class="codeSnip">
+          <p>
+          <pre><code>if (!subTotalValue || !validNumField(subTotalValue)){</code></pre>
+          </p>
+        </div>
+      </li>
+      <p>and:</p>
+      <li>
+        <div class="codeSnip">
+          <p>
+          <pre><code>alert (invalidSubTotalError);</code></pre>
+          </p>
+        </div>
+      </li>
+    </ol>
+    <p>In the first line, the <code>if</code> statement passes the <strong><code>subTotalValue</code></strong> value to the <strong><code>validNumField()</code></strong> function. This checks to ensure the value is a numeric value and has no more than 2 digits after the decimal point. The second line shows what happens when the <strong><code>alert()</code></strong> function is triggered. If the value does not meet that criteria of the <strong><code>validNumField()</code></strong> function, an alert window pops up displaying the <strong><code>invalidSubTotalError</code></strong> string that was passed as a parameter of the built-in <strong><code>alert()</code></strong> function of Javascript.</p>
+    <p>Moving on to the <code>else</code> portion of the statement, we pass a third item - this time, we pass a parameter to a function that will retrieve the desired output directly:</p>
+    <div class="codeSnip">
+      <p>
+      <pre><code>grandTotalField.value = "$" + calcTax(subTotalValue);</code></pre>
+      </p>
+    </div>
+    <p>In the snippet of code above, we're attempting to make the <strong><code>grandTotalField</code></strong> display a dollar sign immediately followed by whatever value is returned from the <strong><code>calcTax()</code></strong> function, using the <strong><code>subTotalValue</code></strong> value as a parameter of that function. Similar to the first example of the tutorial with the <strong><code>addFiveFunction()</code></strong>, the <strong><code>calcTax()</code></strong> function expects a variable to be passed to it so it can use it in its own calculation:</p>
+    <div class="codeSnip">
+      <p>
+      <pre><code>function calcTax(subtotal) {
+		var grandTotal = (subtotal * taxRate).toFixed(2);
+		return grandTotal;
+	}</code></pre>
+      </p>
+    </div>
+    <p>The <strong><code>calcTax()</code></strong> function renames this expected variable to <strong><code>subtotal</code></strong>, then declares a new variable named <strong><code>grandTotal</code></strong>. <em>(Note: renaming the passed parameter is not necessary, I do this to illustrate which variable/parameter was sent from the original function call and how the method is using that parameter). </em> The value of the new variable is set to the rounded product of <strong><code>subtotal</code></strong> (the original value passed) and <strong><code>taxRate</code></strong>, the global variable we declared at the top of the code. Finally, the function returns the value of <strong><code>grandTotal</code></strong> to the original location it was called:</p>
+    <div class="codeSnip">
+      <p>
+      <pre><code>grandTotalField.value = "$" + calcTax(subTotalValue);}</code></pre>
+      </p>
+    </div>
+    <p>If you enter a value of 10, this tax calculation comes out to 10.78, which effectively changes the display on screen to $10.78 - just like if it had been written as:</p>
+    <div class="codeSnip">
+      <p>
+      <pre><code>grandTotalField.value = "$" + "10.78";</code></pre>
+      </p>
+    </div>
+    <p style = "border-bottom: 2px solid black;"></p>
+
+    <!--------------------------------------------------    Part Three    ------------------------------------------------>
+    
+    <h3 class="page-title">Final thoughts:</h3>
+    <p>In the end, being able to pass parameters or objects from function to function is not only an effective way to write code that's easier to debug, but it compartmentalizes your code in a manner that allows you to reuse a function in another, separate part of the program. While this tax calculation function is very narrow in scope, I could reuse the <strong><code>calcTax()</code></strong> method any time in any other method because I'm able to pass any numeric parameter to it.</p>
+    <p>Consider the error message alert when entering a non-numeric value into the <strong><code>subTotal</code></strong> field. I could modify the code slightly to custom tailor error messages for specific types of errors, pass that message string to another method which would change the <strong><code>alert()</code></strong> message to the specific message or messages that were relevant to my errors.</p>
+    <p>Yet another example: While the tax rate is a declared constant within the program, adding another text field, check box, radio menu or selector could potentially allow me to change the working tax rate, and I'd simply call a method which retrieves the chosen tax rate and passes it to the <strong><code>calcTax()</code></strong> method as another, separate value.</p>
+    <p>All of these changes are only be possible because of our ability to pass parameters. It takes a lot of the tedium out of necessary programming, and makes basic processing of information that much easier.</p>
+    <p>Pretty neat eh?</p>
+  </div>
+  <!-- end container--> 
+</section>
+<footer>
+  <nav>
+    <ul>
+      <li> <a href="https://www.facebook.com/" target="_blank"><img src="images/iconfb.png" alt="Facebook"></a></li>
+      <li><a href="https://www.twitter.com/" target="_blank"><img src="images/icontwitter.png" alt="Twitter"></a></li>
+      <li><a href="https://www.linkedin.com/" target="_blank"><img src="images/iconlinkedin.png" alt="Linkedin"></a></li>
+      <li><a href="https://www.instagram.com/" target="_blank"><img src="images/iconinstagram.png" alt="Instagram"></a></li>
+    </ul>
+  </nav>
+  <p>2018 by Dave Minkowski.</p>
+</footer>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script> 
+<script>hljs.initHighlightingOnLoad();</script> 
+<script src="scripts/finalscript.js"></script>
+</body>
+</html>
