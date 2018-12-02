@@ -133,9 +133,9 @@
     <p>Sifting through the code below, we can see the variables and functions involved with making our tax calculation. We could make one big function to handle every step in this calculation, but having separate functions that perform their own tasks helps with identifying problem areas within the code - if some part of the program doesn't work, this can help to easily identify where the conflict might be hiding. It also operates on a programming concept called encapsulation, or information-hiding. The user really only interacts with one of the functions, but that function might call another function which may call yet another function, and so on. Writing code in this way gets us into the practice of hiding information that doesn't need to readily available to each part of our program or script. Passing variables and functions between the inaccessible portions of our code is mandatory for effective encapsulation. Anyway, take a look:</p>
     <div class="codeBlock">
       <pre><code>	
+	var taxRate = 1.078;
 	var subTotalField = document.getElementById("subTotal");
 	var grandTotalField = document.getElementById("grandTotal");
-	var taxRate = 1.078;
 	var invalidSubTotalError = "Please enter a valid amount -  up to 2 decimal places.";
 	  
 	function displayTotal() {
@@ -182,7 +182,7 @@
         </div>
       </li>
     </ol>
-    <p>In the first line, the <code>if</code> statement passes the <strong><code>subTotalValue</code></strong> value to the <strong><code>validNumField()</code></strong> function. This checks to ensure the value is a numeric value and has no more than 2 digits after the decimal point. The second line shows what happens when the <strong><code>alert()</code></strong> function is triggered. If the value does not meet that criteria of the <strong><code>validNumField()</code></strong> function, an alert window pops up displaying the <strong><code>invalidSubTotalError</code></strong> string that was passed as a parameter of the built-in <strong><code>alert()</code></strong> function of Javascript.</p>
+    <p>In the first line, the <code>if</code> statement passes the <strong><code>subTotalValue</code></strong> value to the <strong><code>validNumField()</code></strong> function. This checks to ensure the value is a numeric value and has no more than 2 digits after the decimal point. The second line shows what happens when the <strong><code>alert()</code></strong> function is triggered. If the value does not meet the criteria of the <strong><code>validNumField()</code></strong> function, an alert window pops up displaying the <strong><code>invalidSubTotalError</code></strong> string that was passed as a parameter of the built-in <strong><code>alert()</code></strong> function of Javascript.</p>
     <p>Moving on to the <code>else</code> portion of the statement, we pass a third item - this time, we pass a parameter to a function that will retrieve the desired output directly:</p>
     <div class="codeSnip">
       <p>
@@ -198,7 +198,7 @@
 	}</code></pre>
       </p>
     </div>
-    <p>The <strong><code>calcTax()</code></strong> function renames this expected variable to <strong><code>subtotal</code></strong>, then declares a new variable named <strong><code>grandTotal</code></strong>. <em>(Note: renaming the passed parameter is not necessary, I do this to illustrate which variable/parameter was sent from the original function call and how the method is using that parameter). </em> The value of the new variable is set to the rounded product of <strong><code>subtotal</code></strong> (the original value passed) and <strong><code>taxRate</code></strong>, the global variable we declared at the top of the code. Finally, the function returns the value of <strong><code>grandTotal</code></strong> to the original location it was called:</p>
+    <p>The <strong><code>calcTax()</code></strong> function renames this passed variable value to <strong><code>subtotal</code></strong>, then declares a new variable named <strong><code>grandTotal</code></strong>. <em>(Note: renaming the passed parameter is not necessary, I do this to illustrate which variable/parameter was sent from the original function call and how the method is using that parameter). </em> The value of the new variable is set to the rounded product of <strong><code>subtotal</code></strong> (the original value passed) and <strong><code>taxRate</code></strong>, the global variable we declared in the first line of the example code. Finally, the function returns the value of <strong><code>grandTotal</code></strong> to the original location it was called:</p>
     <div class="codeSnip">
       <p>
       <pre><code>grandTotalField.value = "$" + calcTax(subTotalValue);}</code></pre>
@@ -215,7 +215,7 @@
     <!--------------------------------------------------    Part Three    ------------------------------------------------>
     
     <h3 class="page-title">Final thoughts:</h3>
-    <p>In the end, being able to pass parameters or objects from function to function is not only an effective way to write code that's easier to debug, but it compartmentalizes your code in a manner that allows you to reuse a function in another, separate part of the program. While this tax calculation function is very narrow in scope, I could reuse the <strong><code>calcTax()</code></strong> method any time in any other method because I'm able to pass any numeric parameter to it.</p>
+    <p>As you can see, being able to pass parameters or objects from function to function is not only an effective way to write code that's easier to debug, but it compartmentalizes your code in a manner that allows you to reuse a function in another, separate part of the program. While this tax calculation function is very narrow in scope, I could reuse the <strong><code>calcTax()</code></strong> method any time in any other method because I'm able to pass any numeric parameter to it.</p>
     <p>Consider the error message alert when entering a non-numeric value into the <strong><code>subTotal</code></strong> field. I could modify the code slightly to custom tailor error messages for specific types of errors, pass that message string to another method which would change the <strong><code>alert()</code></strong> message to the specific message or messages that were relevant to my errors.</p>
     <p>Yet another example: While the tax rate is a declared constant within the program, adding another text field, check box, radio menu or selector could potentially allow me to change the working tax rate, and I'd simply call a method which retrieves the chosen tax rate and passes it to the <strong><code>calcTax()</code></strong> method as another, separate value.</p>
     <p>All of these changes are only be possible because of our ability to pass parameters. It takes a lot of the tedium out of necessary programming, and makes basic processing of information that much easier.</p>
