@@ -1,2 +1,2 @@
 # daveminkowski.github.io
-Project Website for CIS Courses
+Project Website for CIS Courses.
